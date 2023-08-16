@@ -1,10 +1,10 @@
 ---
 title: About Custom CA Root Certificates
-weight: 1
-aliases:
-  - /rancher/v2.0-v2.4/en/installation/options/custom-ca-root-certificate/
-  - /rancher/v2.0-v2.4/en/installation/resources/choosing-version/encryption/custom-ca-root-certificate
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/resources/custom-ca-root-certificates"/>
+</head>
 
 If you're using Rancher in an internal production environment where you aren't exposing apps publicly, use a certificate from a private certificate authority (CA).
 

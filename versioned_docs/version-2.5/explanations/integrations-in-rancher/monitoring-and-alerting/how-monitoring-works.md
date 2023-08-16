@@ -1,8 +1,6 @@
 ---
 title: How Monitoring Works
-weight: 1
 ---
-
 
 ## 1. Architecture Overview
 

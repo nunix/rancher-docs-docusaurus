@@ -1,12 +1,11 @@
 ---
 title: Rancher Helm Chart Options
-weight: 1
-aliases:
-  - /rancher/v2.0-v2.4/en/installation/options/
-  - /rancher/v2.0-v2.4/en/installation/options/chart-options/
-  - /rancher/v2.0-v2.4/en/installation/options/helm2/helm-rancher/chart-options/
-  - /rancher/v2.0-v2.4/en/installation/resources/chart-options
+keywords: [rancher v2.0-v2.4 helm chart, rancher v2.0-v2.4 helm options, rancher v2.0-v2.4 helm chart options, helm chart rancher v2.0-v2.4 helm options rancher v2.0-v2.4 helm chart options rancher v2.0-v2.4]
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/installation-references/helm-chart-options"/>
+</head>
 
 This page is a configuration reference for the Rancher Helm chart.
 
@@ -55,7 +54,7 @@ For information on enabling experimental features, refer to [this page.](../../p
 | `rancherImageTag`              | same as chart version                                 | `string` - rancher/rancher image tag                                                                                                              |
 | `replicas`                     | 3                                                     | `int` - Number of replicas of Rancher pods                                                                                                        |
 | `resources`                    | {}                                                    | `map` - rancher pod resource requests & limits                                                                                                    |
-| `systemDefaultRegistry`        | ""                                                    | `string` - private registry to be used for all system Docker images, e.g., http://registry.example.com/                   |
+| `systemDefaultRegistry`        | ""                                                    | `string` - private registry to be used for all system Docker images, e.g., registry.example.com                       |
 | `tls`                          | "ingress"                                             | `string` - See [External TLS Termination](#external-tls-termination) for details. - "ingress, external"                                           |
 | `useBundledSystemChart`        | `false`                                               | `bool` - select to use the system-charts packaged with Rancher server. This option is used for air gapped installations.  |
 
@@ -156,7 +155,7 @@ For details on installing Rancher with a private registry, see:
 
 - [Air Gap: Kubernetes Install](../../pages-for-subheaders/air-gap-helm2.md)
 
-# External TLS Termination
+## External TLS Termination
 
 We recommend configuring your load balancer as a Layer 4 balancer, forwarding plain 80/tcp and 443/tcp to the Rancher Management cluster nodes. The Ingress Controller on the cluster will redirect http traffic on port 80 to https on port 443.
 

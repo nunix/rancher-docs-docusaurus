@@ -1,24 +1,10 @@
 ---
 title: Upgrades
-weight: 2
-aliases:
-  - /rancher/v2.0-v2.4/en/upgrades/upgrades
-  - /rancher/v2.0-v2.4/en/installation/upgrades-rollbacks/upgrades
-  - /rancher/v2.0-v2.4/en/upgrades/upgrades/ha-server-upgrade-helm-airgap
-  - /rancher/v2.0-v2.4/en/upgrades/air-gap-upgrade/
-  - /rancher/v2.0-v2.4/en/upgrades/upgrades/ha
-  - /rancher/v2.0-v2.4/en/installation/install-rancher-on-k8s/upgrades/upgrades/ha
-  - /rancher/v2.0-v2.4/en/installation/upgrades-rollbacks/upgrades/
-  - /rancher/v2.0-v2.4/en/upgrades/upgrades/ha-server-upgrade-helm/
-  - /rancher/v2.0-v2.4/en/installation/upgrades-rollbacks/upgrades/ha
-  - /rancher/v2.0-v2.4/en/installation/install-rancher-on-k8s/upgrades-rollbacks/upgrades
-  - /rancher/v2.0-v2.4/en/installation/install-rancher-on-k8s/upgrades-rollbacks/upgrades/ha
-  - /rancher/v2.0-v2.4/en/installation/upgrades-rollbacks/
-  - /rancher/v2.0-v2.4/en/upgrades/
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/install-upgrade-on-a-kubernetes-cluster/upgrades"/>
+</head>
 
 The following instructions will guide you through upgrading a Rancher server that was installed on a Kubernetes cluster with Helm. These steps also apply to air gap installs with Helm.
 
@@ -33,7 +19,7 @@ If you installed Rancher using the RKE Add-on yaml, follow the directions to [mi
 - [Known Upgrade Issues](#known-upgrade-issues)
 - [RKE Add-on Installs](#rke-add-on-installs)
 
-# Prerequisites
+## Prerequisites
 
 ### Access to kubeconfig
 
@@ -69,7 +55,7 @@ If you are upgrading Rancher from v2.x to v2.3+, and you are using external TLS 
 
 [Let's Encrypt will be blocking cert-manager instances older than 0.8.0 starting November 1st 2019.](https://community.letsencrypt.org/t/blocking-old-cert-manager-versions/98753) Upgrade cert-manager to the latest version by following [these instructions.](../getting-started/installation-and-upgrade/resources/upgrade-cert-manager.md)
 
-# Upgrade Outline
+## Upgrade Outline
 
 Follow the steps to upgrade Rancher server:
 
@@ -78,7 +64,7 @@ Follow the steps to upgrade Rancher server:
 - [3. Upgrade Rancher](#3-upgrade-rancher)
 - [4. Verify the Upgrade](#4-verify-the-upgrade)
 
-# 1. Back up Your Kubernetes Cluster that is Running Rancher Server
+## 1. Back up Your Kubernetes Cluster that is Running Rancher Server
 
 
 [Take a one-time snapshot](../how-to-guides/new-user-guides/backup-restore-and-disaster-recovery/back-up-rancher-launched-kubernetes-clusters.md#option-b-one-time-snapshots)
@@ -86,7 +72,7 @@ of your Kubernetes cluster running Rancher server.
 
 You'll use the backup as a restoration point if something goes wrong during upgrade.
 
-# 2. Update the Helm chart repository
+## 2. Update the Helm chart repository
 
 1. Update your local helm repo cache.
 
@@ -136,7 +122,7 @@ You'll use the backup as a restoration point if something goes wrong during upgr
     helm fetch rancher-<CHART_REPO>/rancher --version=v2.4.11
     ```
 
-# 3. Upgrade Rancher
+## 3. Upgrade Rancher
 
 This section describes how to upgrade normal (Internet-connected) or air gap installations of Rancher with Helm.
 
@@ -271,7 +257,7 @@ kubectl -n cattle-system apply -R -f ./rancher
 </TabItem>
 </Tabs>
 
-# 4. Verify the Upgrade
+## 4. Verify the Upgrade
 
 Log into Rancher to confirm that the upgrade succeeded.
 
@@ -279,7 +265,7 @@ Log into Rancher to confirm that the upgrade succeeded.
 >
 > See [Restoring Cluster Networking](../getting-started/installation-and-upgrade/install-upgrade-on-a-kubernetes-cluster/upgrades/namespace-migration.md#restoring-cluster-networking).
 
-# Known Upgrade Issues
+## Known Upgrade Issues
 
 The following table lists some of the most noteworthy issues to be considered when upgrading Rancher. A more complete list of known issues for each Rancher version can be found in the release notes on [GitHub](https://github.com/rancher/rancher/releases) and on the [Rancher forums.](https://forums.rancher.com/c/announcements/12)
 
@@ -291,7 +277,7 @@ Upgrading to v2.2.0-v2.2.x | Rancher introduced the [system charts](https://gith
 Upgrading from v2.0.13 or earlier  | If your cluster's certificates have expired, you will need to perform [additional steps](../how-to-guides/advanced-user-guides/manage-clusters/rotate-certificates.md#rotating-expired-certificates-after-upgrading-older-rancher-versions) to rotate the certificates.
 Upgrading from v2.0.7 or earlier | Rancher introduced the `system` project, which is a project that's automatically created to store important namespaces that Kubernetes needs to operate. During upgrade to v2.0.7+, Rancher expects these namespaces to be unassigned from all projects. Before beginning upgrade, check your system namespaces to make sure that they're unassigned to [prevent cluster networking issues.](../getting-started/installation-and-upgrade/install-upgrade-on-a-kubernetes-cluster/upgrades/namespace-migration.md)
 
-# RKE Add-on Installs
+## RKE Add-on Installs
 
 **Important: RKE add-on install is only supported up to Rancher v2.0.8**
 

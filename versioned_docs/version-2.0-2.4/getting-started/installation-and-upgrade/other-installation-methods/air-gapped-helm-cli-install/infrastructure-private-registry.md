@@ -1,12 +1,6 @@
 ---
 title: '1. Set up Infrastructure and Private Registry'
-weight: 100
-aliases:
-  - /rancher/v2.0-v2.4/en/installation/air-gap-single-node/provision-host
 ---
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 In this section, you will provision the underlying infrastructure for your Rancher management server in an air gapped environment. You will also set up the private Docker registry that must be available to your Rancher node(s).
 

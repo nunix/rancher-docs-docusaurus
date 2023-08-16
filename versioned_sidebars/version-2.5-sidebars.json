@@ -31,7 +31,7 @@
           "items": [
             {
               "type": "category",
-              "label": "Deploy Rancher Manager",
+              "label": "Deploy Rancher",
               "link": {
                 "type": "doc",
                 "id": "pages-for-subheaders/deploy-rancher-manager"
@@ -691,7 +691,6 @@
                 "items": [
                     "how-to-guides/advanced-user-guides/manage-projects/add-users-to-projects",
                     "how-to-guides/advanced-user-guides/manage-projects/manage-namespaces",
-                    "how-to-guides/advanced-user-guides/manage-projects/ci-cd-pipelines",
                     "how-to-guides/advanced-user-guides/manage-projects/manage-pod-security-policies",
                       {
                         "type": "category",
@@ -835,7 +834,7 @@
            },
            {
               "type": "category",
-              "label": "Rancher Manager Architecture",
+              "label": "Rancher Architecture",
               "link": {
                 "type": "doc",
                 "id": "pages-for-subheaders/rancher-manager-architecture"
@@ -1034,21 +1033,6 @@
               "reference-guides/rancher-project-tools",
               "reference-guides/system-tools",
               "reference-guides/rke1-template-example-yaml",
-          {
-            "type": "category",
-            "label": "Pipelines",
-            "link": {
-              "type": "doc",
-              "id": "pages-for-subheaders/pipelines"
-                },
-            "items": [
-              "reference-guides/pipelines/concepts",
-              "reference-guides/pipelines/pipeline-configuration",
-              "reference-guides/pipelines/configure-persistent-data",
-              "reference-guides/pipelines/example-repositories",
-              "reference-guides/pipelines/example-yaml"
-                  ]
-          },
           {
             "type": "category",
             "label": "Rancher Security",

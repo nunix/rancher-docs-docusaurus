@@ -1,7 +1,10 @@
 ---
 title: Setting up the Amazon Cloud Provider
-weight: 1
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-clusters-in-rancher-setup/set-up-cloud-providers/amazon"/>
+</head>
 
 When using the `Amazon` cloud provider, you can leverage the following capabilities:
 

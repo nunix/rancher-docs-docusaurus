@@ -1,9 +1,11 @@
 ---
 title: Vagrant Quick Start
-weight: 200
-aliases:
-  - /rancher/v2.x/en/quick-start-guide/deployment/quickstart-vagrant/
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/quick-start-guides/deploy-rancher-manager/vagrant"/>
+</head>
+
 The following steps quickly deploy a Rancher Server with a single node cluster attached.
 
 >**Note:** The intent of these guides is to quickly launch a sandbox that you can use to evaluate Rancher. These guides are not intended for production environments. For comprehensive setup instructions, see [Installation](../../../pages-for-subheaders/installation-and-upgrade.md).
@@ -25,7 +27,7 @@ The following steps quickly deploy a Rancher Server with a single node cluster a
 
 1. Clone [Rancher Quickstart](https://github.com/rancher/quickstart) to a folder using `git clone https://github.com/rancher/quickstart`.
 
-2. Go into the folder containing the Vagrantfile by executing `cd quickstart/vagrant`.
+2. Go into the folder containing the Vagrantfile by executing `cd quickstart/rancher/vagrant`.
 
 3. **Optional:** Edit `config.yaml` to:
 
@@ -44,6 +46,6 @@ Use Rancher to create a deployment. For more information, see [Creating Deployme
 
 ## Destroying the Environment
 
-1. From the `quickstart/vagrant` folder execute `vagrant destroy -f`.
+1. From the `quickstart/rancher/vagrant` folder execute `vagrant destroy -f`.
 
 2. Wait for the confirmation that all resources have been destroyed.

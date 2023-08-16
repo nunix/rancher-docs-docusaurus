@@ -1,8 +1,5 @@
 ---
 title: Launching Kubernetes on New Nodes in an Infrastructure Provider
-weight: 2205
-aliases:
-  - /rancher/v2.0-v2.4/en/concepts/global-configuration/node-templates/
 ---
 
 Using Rancher, you can create pools of nodes based on a [node template](use-new-nodes-in-an-infra-provider.md#node-templates). This node template defines the parameters you want to use to launch nodes in your infrastructure providers or cloud providers.
@@ -12,7 +9,7 @@ One benefit of installing Kubernetes on node pools hosted by an infrastructure p
 The available cloud providers to create a node template are decided based on active [node drivers](use-new-nodes-in-an-infra-provider.md#node-drivers).
 
 
-# Node Templates
+## Node Templates
 
 A node template is the saved configuration for the parameters to use when provisioning nodes in a specific cloud provider. These nodes can be launched from the UI. Rancher uses [Docker Machine](https://docs.docker.com/machine/) to provision these nodes. The available cloud providers to create node templates are based on the active node drivers in Rancher.
 
@@ -43,15 +40,15 @@ To access all node templates, an administrator will need to do the following:
 
 **Result:** All node templates are listed and grouped by owner. The templates can be edited or cloned by clicking the **&#8942;.**
 
-# Node Pools
+## Node Pools
 
-Using Rancher, you can create pools of nodes based on a [node template](#node-templates). 
+Using Rancher, you can create pools of nodes based on a [node template](#node-templates).
 
 A node template defines the configuration of a node, like what operating system to use, number of CPUs and amount of memory.
 
 The benefit of using a node pool is that if a node is destroyed or deleted, you can increase the number of live nodes to compensate for the node that was lost. The node pool helps you ensure that the count of the node pool is as expected.
 
-Each node pool must have one or more nodes roles assigned. 
+Each node pool must have one or more nodes roles assigned.
 
 Each node role (i.e. etcd, control plane, and worker) should be assigned to a distinct node pool. Although it is possible to assign multiple node roles to a node pool, this should not be done for production clusters.
 
@@ -111,7 +108,7 @@ You can disable node auto-replace from the Rancher UI with the following steps:
 
 **Result:** Node auto-replace is disabled for the node pool.
 
-# Cloud Credentials
+## Cloud Credentials
 
 _Available as of v2.2.0_
 
@@ -127,6 +124,6 @@ Node templates can use cloud credentials to store credentials for launching node
 
 After cloud credentials are created, the user can start [managing the cloud credentials that they created](../reference-guides/user-settings/manage-cloud-credentials.md).
 
-# Node Drivers
+## Node Drivers
 
-If you don't find the node driver that you want to use, you can see if it is available in Rancher's built-in [node drivers and activate it](../how-to-guides/advanced-user-guides/authentication-permissions-and-global-configuration/about-provisioning-drivers/manage-node-drivers.md#activating-deactivating-node-drivers), or you can [add your own custom node driver](../how-to-guides/advanced-user-guides/authentication-permissions-and-global-configuration/about-provisioning-drivers/manage-node-drivers.md#adding-custom-node-drivers).
+If you don't find the node driver that you want to use, you can see if it is available in Rancher's built-in [node drivers and activate it](../how-to-guides/advanced-user-guides/authentication-permissions-and-global-configuration/about-provisioning-drivers/manage-node-drivers.md#activatingdeactivating-node-drivers), or you can [add your own custom node driver](../how-to-guides/advanced-user-guides/authentication-permissions-and-global-configuration/about-provisioning-drivers/manage-node-drivers.md#adding-custom-node-drivers).

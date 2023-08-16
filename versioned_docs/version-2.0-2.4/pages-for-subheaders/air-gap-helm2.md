@@ -1,12 +1,5 @@
 ---
 title: Installing Rancher in an Air Gapped Environment with Helm 2
-weight: 2
-aliases:
-  - /rancher/v2.0-v2.4/en/installation/air-gap-installation/
-  - /rancher/v2.0-v2.4/en/installation/air-gap-high-availability/
-  - /rancher/v2.0-v2.4/en/installation/air-gap-single-node/
-  - /rancher/v2.0-v2.4/en/installation/options/air-gap-helm2
-  - /rancher/v2.x/en/installation/resources/advanced/air-gap-helm2/
 ---
 
 > After Helm 3 was released, the Rancher installation instructions were updated to use Helm 3.
@@ -35,7 +28,7 @@ The Docker installation is for Rancher users that are wanting to test out Ranche
 
 Instead of running the Docker installation, you have the option to follow the Kubernetes Install guide, but only use one node to install Rancher. Afterwards, you can scale up the etcd nodes in your Kubernetes cluster to make it a Kubernetes Installation.
 
-# Installation Outline
+## Installation Outline
 
 - [1. Prepare your Node(s)](../getting-started/installation-and-upgrade/other-installation-methods/air-gapped-helm-cli-install/infrastructure-private-registry.md)
 - [2. Collect and Publish Images to your Private Registry](../getting-started/installation-and-upgrade/other-installation-methods/air-gapped-helm-cli-install/publish-images.md)

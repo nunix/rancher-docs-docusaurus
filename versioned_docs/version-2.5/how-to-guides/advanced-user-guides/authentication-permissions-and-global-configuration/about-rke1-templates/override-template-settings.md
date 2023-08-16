@@ -1,9 +1,10 @@
 ---
 title: Overriding Template Settings
-weight: 33
-aliases:
-  - /rancher/v2.x/en/admin-settings/rke-templates/overrides/
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/authentication-permissions-and-global-configuration/about-rke1-templates/override-template-settings"/>
+</head>
 
 When a user creates an RKE template, each setting in the template has a switch in the Rancher UI that indicates if users can override the setting. This switch marks those settings as **Allow User Override.**
 

@@ -1,9 +1,10 @@
 ---
 title: GlusterFS Volumes
-weight: 5000
-aliases:
-  - /rancher/v2.x/en/cluster-admin/volumes-and-storage/glusterfs-volumes/
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/manage-clusters/create-kubernetes-persistent-storage/manage-persistent-storage/about-glusterfs-volumes"/>
+</head>
 
 > This section only applies to [RKE clusters.](../../../../../pages-for-subheaders/launch-kubernetes-with-rancher.md)
 

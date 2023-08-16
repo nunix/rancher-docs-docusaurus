@@ -1,7 +1,10 @@
 ---
 title: Creating and Revising Templates
-weight: 32
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/authentication-permissions-and-global-configuration/about-rke1-templates/manage-rke1-templates"/>
+</head>
 
 This section describes how to manage RKE templates and revisions. You an create, share, update, and delete templates from the **Global** view under **Tools > RKE Templates.**
 
@@ -132,7 +135,7 @@ To upgrade a cluster to use a new template revision,
 
 You can save an existing cluster's settings as an RKE template.
 
-This exports the cluster's settings as a new RKE template, and also binds the cluster to that template. The result is that the cluster can only be changed if the [template is updated,](manage-rke1-templates.md#updating-a-template) and the cluster is upgraded to [use a newer version of the template.]
+This exports the cluster's settings as a new RKE template, and also binds the cluster to that template. The result is that the cluster can only be changed if the [template is updated,](#updating-a-template) and the cluster is upgraded to [use a newer version of the template](#upgrading-a-cluster-to-use-a-new-template-revision).
 
 To convert an existing cluster to use an RKE template,
 

@@ -1,12 +1,6 @@
 ---
 title: Creating a vSphere Cluster
-shortTitle: vSphere
 description: Use Rancher to create a vSphere cluster. It may consist of groups of VMs with distinct properties which allow for fine-grained control over the sizing of nodes.
-metaDescription: Use Rancher to create a vSphere cluster. It may consist of groups of VMs with distinct properties which allow for fine-grained control over the sizing of nodes.
-weight: 2225
-aliases:
-  - /rancher/v2.5/en/tasks/clusters/creating-a-cluster/create-cluster-vsphere/
-  - /rancher/v2.x/en/cluster-provisioning/rke-clusters/node-pools/vsphere/
 ---
 import YouTube from '@site/src/components/YouTube'
 
@@ -21,7 +15,7 @@ A vSphere cluster may consist of multiple groups of VMs with distinct properties
 - [Provisioning Storage](#provisioning-storage)
 - [Enabling the vSphere Cloud Provider](#enabling-the-vsphere-cloud-provider)
 
-# vSphere Enhancements in Rancher v2.3
+## vSphere Enhancements in Rancher v2.3
 
 The vSphere node templates have been updated, allowing you to bring cloud operations on-premises with the following enhancements:
 
@@ -35,7 +29,7 @@ One of the biggest advantages of provisioning vSphere nodes with Rancher is that
 
 Node templates for vSphere have been updated so that when you create a node template with your vSphere credentials, the template is automatically populated with the same options for provisioning VMs that you have access to in the vSphere console.
 
-For the fields to be populated, your setup needs to fulfill the [prerequisites.](../how-to-guides/new-user-guides/kubernetes-clusters-in-rancher-setup/launch-kubernetes-with-rancher/use-new-nodes-in-an-infra-provider/vsphere/provision-kubernetes-clusters-in-vsphere.md)
+For the fields to be populated, your setup needs to fulfill the [prerequisites.](../how-to-guides/new-user-guides/kubernetes-clusters-in-rancher-setup/launch-kubernetes-with-rancher/use-new-nodes-in-an-infra-provider/vsphere/provision-kubernetes-clusters-in-vsphere.md#preparation-in-vsphere)
 
 ### More Supported Operating Systems
 

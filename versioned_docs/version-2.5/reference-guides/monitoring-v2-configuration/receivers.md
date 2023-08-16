@@ -1,17 +1,6 @@
 ---
 title: Receiver Configuration
-shortTitle: Receivers
-weight: 1
-aliases:
-  - /rancher/v2.5/en/monitoring-alerting/configuration/alertmanager
-  - rancher/v2.5/en/monitoring-alerting/legacy/notifiers/
-  - /rancher/v2.5/en/cluster-admin/tools/notifiers
-  - /rancher/v2.5/en/cluster-admin/tools/alerts
-  - /rancher/v2.5/en/monitoring-alerting/configuration/alertmanager
 ---
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 The [Alertmanager Config](https://prometheus.io/docs/alerting/latest/configuration/#configuration-file) Secret contains the configuration of an Alertmanager instance that sends out notifications based on alerts it receives from Prometheus.
 
@@ -375,7 +364,7 @@ spec:
 #    key: string
 ```
 
-For more information on enabling alerting for `rancher-cis-benchmark`, see [this section.](../../pages-for-subheaders/cis-scan-guides.md#enabling-alerting-for-rancher-cis-benchmark)
+For more information on enabling alerting for `rancher-cis-benchmark`, see [this section.](../../how-to-guides/advanced-user-guides/cis-scan-guides/enable-alerting-for-rancher-cis-benchmark.md)
 
 
 ## Trusted CA for Notifiers

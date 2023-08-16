@@ -1,9 +1,10 @@
 ---
 title: '2. Install Kubernetes'
-weight: 200
-aliases:
-  - /rancher/v2.x/en/installation/other-installation-methods/behind-proxy/launch-kubernetes/
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/other-installation-methods/rancher-behind-an-http-proxy/install-kubernetes"/>
+</head>
 
 Once the infrastructure is ready, you can continue with setting up an RKE cluster to install Rancher in.
 

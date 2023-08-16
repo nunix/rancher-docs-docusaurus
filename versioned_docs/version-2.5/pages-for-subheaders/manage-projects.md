@@ -1,9 +1,5 @@
 ---
 title: Project Administration
-weight: 9
-aliases:
-  - /rancher/v2.5/en/project-admin/editing-projects/
-  - /rancher/v2.x/en/project-admin/
 ---
 
 _Projects_ are objects introduced in Rancher that help organize namespaces in your Kubernetes cluster. You can use projects to create multi-tenant clusters, which allows a group of users to share the same underlying resources without interacting with each other's applications.
@@ -24,7 +20,6 @@ You can use projects to perform actions like:
 - [Set resource quotas](manage-project-resource-quotas.md)
 - [Manage namespaces](../how-to-guides/advanced-user-guides/manage-projects/manage-namespaces.md)
 - [Configure tools](../reference-guides/rancher-project-tools.md)
-- [Set up pipelines for continuous integration and deployment](../how-to-guides/advanced-user-guides/manage-projects/ci-cd-pipelines.md)
 - [Configure pod security policies](../how-to-guides/advanced-user-guides/manage-projects/manage-pod-security-policies.md)
 
 ### Authorization

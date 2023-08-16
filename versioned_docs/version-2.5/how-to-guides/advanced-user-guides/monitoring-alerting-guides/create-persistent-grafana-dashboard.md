@@ -1,20 +1,13 @@
 ---
 title: Persistent Grafana Dashboards
-weight: 6
-aliases:
-  - /rancher/v2.5/en/monitoring-alerting/persist-grafana
-  - /rancher/v2.x/en/monitoring-alerting/v2.5/persist-grafana/
 ---
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 To allow the Grafana dashboard to persist after the Grafana instance restarts, add the dashboard configuration JSON into a ConfigMap. ConfigMaps also allow the dashboards to be deployed with a GitOps or CD based approach. This allows the dashboard to be put under version control.
 
 - [Creating a Persistent Grafana Dashboard](#creating-a-persistent-grafana-dashboard)
 - [Known Issues](#known-issues)
 
-# Creating a Persistent Grafana Dashboard
+## Creating a Persistent Grafana Dashboard
 
 <Tabs>
 <TabItem value="Rancher v2.5.8+">
@@ -130,7 +123,7 @@ helm.sh/resource-policy: "keep"
 </TabItem>
 </Tabs>
 
-# Known Issues
+## Known Issues
 
 For users who are using Monitoring V2 v9.4.203 or below, uninstalling the Monitoring chart will delete the `cattle-dashboards` namespace, which will delete all persisted dashboards, unless the namespace is marked with the annotation `helm.sh/resource-policy: "keep"`.
 

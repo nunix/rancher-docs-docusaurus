@@ -1,10 +1,10 @@
 ---
 title: Backing up a Cluster
-weight: 2045
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/backup-restore-and-disaster-recovery/back-up-rancher-launched-kubernetes-clusters"/>
+</head>
 
 _Available as of v2.2.0_
 
@@ -14,8 +14,7 @@ Rancher recommends configuring recurrent `etcd` snapshots for all production clu
 
 Snapshots of the etcd database are taken and saved either [locally onto the etcd nodes](#local-backup-target) or to a [S3 compatible target](#s3-backup-target). The advantages of configuring S3 is that if all etcd nodes are lost, your snapshot is saved remotely and can be used to restore the cluster.
 
-
-# How Snapshots Work
+## How Snapshots Work
 
 <Tabs>
 <TabItem value="Rancher v2.4.0+">
@@ -123,7 +122,7 @@ On restore, the following process is used:
 </TabItem>
 </Tabs>
 
-# Configuring Recurring Snapshots
+## Configuring Recurring Snapshots
 
 Select how often you want recurring snapshots to be taken as well as how many snapshots to keep. The amount of time is measured in hours. With timestamped snapshots, the user has the ability to do a point-in-time recovery.
 
@@ -140,7 +139,7 @@ In the **Advanced Cluster Options** section, there are several options available
 | Recurring etcd Snapshot Creation Period | Time in hours between recurring snapshots| 12 hours |
 | Recurring etcd Snapshot Retention Count | Number of snapshots to retain| 6 |
 
-# One-Time Snapshots
+## One-Time Snapshots
 
 In addition to recurring snapshots, you may want to take a "one-time" snapshot. For example, before upgrading the Kubernetes version of a cluster it's best to backup the state of the cluster to protect against upgrade failure.
 
@@ -150,7 +149,7 @@ In addition to recurring snapshots, you may want to take a "one-time" snapshot. 
 
 **Result:** Based on your [snapshot backup target](#snapshot-backup-targets), a one-time snapshot will be taken and saved in the selected backup target.
 
-# Snapshot Backup Targets
+## Snapshot Backup Targets
 
 Rancher supports two different backup targets:
 
@@ -191,7 +190,7 @@ The `S3` backup target supports using IAM authentication to AWS API in addition 
 
  To give an application access to S3, refer to the AWS documentation on [Using an IAM Role to Grant Permissions to Applications Running on Amazon EC2 Instances.](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html)
 
-# Viewing Available Snapshots
+## Viewing Available Snapshots
 
 The list of all available snapshots for the cluster is available in the Rancher UI.
 
@@ -199,7 +198,7 @@ The list of all available snapshots for the cluster is available in the Rancher 
 
 2. Click **Tools > Snapshots** from the navigation bar to view the list of saved snapshots. These snapshots include a timestamp of when they were created.
 
-# Safe Timestamps
+## Safe Timestamps
 
 _Available as of v2.3.0_
 
@@ -207,6 +206,6 @@ As of v2.2.6, snapshot files are timestamped to simplify processing the files us
 
 This option is not available directly in the UI, and is only available through the `Edit as Yaml` interface.
 
-# Enabling Snapshot Features for Clusters Created Before Rancher v2.2.0
+## Enabling Snapshot Features for Clusters Created Before Rancher v2.2.0
 
 If you have any Rancher launched Kubernetes clusters that were created before v2.2.0, after upgrading Rancher, you must [edit the cluster](../../../pages-for-subheaders/cluster-configuration.md) and _save_ it, in order to enable the updated snapshot features. Even if you were already creating snapshots before v2.2.0, you must do this step as the older snapshots will not be available to use to [back up and restore etcd through the UI](restoring-etcd.md).

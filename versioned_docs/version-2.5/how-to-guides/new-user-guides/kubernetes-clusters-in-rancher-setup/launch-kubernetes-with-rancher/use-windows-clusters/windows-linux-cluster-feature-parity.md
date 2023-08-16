@@ -1,7 +1,10 @@
 ---
 title: Windows and Linux Cluster Feature Parity
-weight: 3
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-clusters-in-rancher-setup/use-windows-clusters/windows-linux-cluster-feature-parity"/>
+</head>
 
 Windows clusters do not share the same feature support as Linux clusters.
 
@@ -9,14 +12,14 @@ The following chart describes the feature parity between Windows and Linux on Ra
 
 **Component** | **Linux** | **Windows**
 --- | --- | ---
-**Distributions** |  | 
+**Distributions** |  |
 RKE | Supported | Supported
 RKE2 | Supported | Tenatively Planned For 2.6.x
 K3S | Supported | Not Supported
 EKS | Supported | Not Supported
 GKE | Supported | Not Supported
 AKS | Supported | Not Supported
-**Rancher Components** |  | 
+**Rancher Components** |  |
 Server | Supported | Not Supported
 Agent | Supported | Supported
 Fleet | Supported | Supported
@@ -35,7 +38,7 @@ OPA | Supported | Not Supported
 Longhorn | Supported | Not Supported
 CIS Scans | Supported | Not Supported
 Backup/Restore Operator | Supported | Not Supported
-**CNI / Add-ons** |  | 
+**CNI / Add-ons** |  |
 Flannel | Supported | Supported
 Canal | Supported | Not Supported
 Calico | Supported | Tentatively Planned for 2.6.x

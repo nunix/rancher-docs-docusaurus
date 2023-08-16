@@ -1,11 +1,5 @@
 ---
 title: 3. Select the Nodes Where Istio Components Will be Deployed
-weight: 3
-aliases:
-  - /rancher/v2.0-v2.4/en/cluster-admin/tools/istio/setup/node-selectors
-  - /rancher/v2.0-v2.4/en/istio/legacy/setup/node-selectors
-  - /rancher/v2.0-v2.4/en/istio/v2.3.x-v2.4.x/setup/node-selectors
-  - /rancher/v2.x/en/istio/v2.3.x-v2.4.x/setup/node-selectors/
 ---
 
 > **Prerequisite:** Your cluster needs a worker node that can designated for Istio. The worker node should meet the [resource requirements.](../../../explanations/integrations-in-rancher/istio/cpu-and-memory-allocations.md)
@@ -14,7 +8,7 @@ This section describes how use node selectors to configure Istio components to b
 
 In larger deployments, it is strongly advised that Istio's infrastructure be placed on dedicated nodes in the cluster by adding a node selector for each Istio component.
 
-# Adding a Label to the Istio Node
+## Adding a Label to the Istio Node
 
 First, add a label to the node where Istio components should be deployed. This label can have any key-value pair. For this example, we will use the key `istio` and the value `enabled`.
 
@@ -27,7 +21,7 @@ First, add a label to the node where Istio components should be deployed. This l
 
 **Result:** A worker node has the label that will allow you to designate it for Istio components.
 
-# Configuring Istio Components to Use the Labeled Node
+## Configuring Istio Components to Use the Labeled Node
 
 Configure each Istio component to be deployed to the node with the Istio label. Each Istio component can be configured individually, but in this tutorial, we will configure all of the components to be scheduled on the same node for the sake of simplicity.
 

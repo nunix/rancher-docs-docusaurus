@@ -1,12 +1,10 @@
 ---
 title: Choosing a Rancher Version
-weight: 1
-aliases:
-  - /rancher/v2.0-v2.4/en/installation/options/server-tags
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/resources/choose-a-rancher-version"/>
+</head>
 
 This section describes how to choose a Rancher version.
 

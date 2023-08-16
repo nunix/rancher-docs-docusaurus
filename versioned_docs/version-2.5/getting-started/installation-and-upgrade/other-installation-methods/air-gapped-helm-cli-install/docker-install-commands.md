@@ -1,7 +1,10 @@
 ---
 title: Docker Install Commands
-weight: 1
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/other-installation-methods/air-gapped-helm-cli-install/docker-install-commands"/>
+</head>
 
 The Docker installation is for Rancher users who want to test out Rancher.
 

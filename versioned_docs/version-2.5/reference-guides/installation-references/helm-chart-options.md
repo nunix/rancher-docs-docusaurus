@@ -1,13 +1,11 @@
 ---
 title: Rancher Helm Chart Options
-weight: 1
-aliases:
-  - /rancher/v2.5/en/installation/options/
-  - /rancher/v2.5/en/installation/options/chart-options/
-  - /rancher/v2.5/en/installation/options/helm2/helm-rancher/chart-options/
-  - /rancher/v2.5/en/installation/resources/chart-options
-  - /rancher/v2.x/en/installation/install-rancher-on-k8s/chart-options/
+keywords: [rancher v2.5 helm chart, rancher v2.5 helm options, rancher v2.5 helm chart options, helm chart rancher v2.5 helm options rancher v2.5 helm chart options rancher v2.5]
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/installation-references/helm-chart-options"/>
+</head>
 
 This page is a configuration reference for the Rancher Helm chart.
 
@@ -58,7 +56,7 @@ For information on enabling experimental features, refer to [this page.](../../p
 | `replicas`                     | 3                                                     | `int` - Number of replicas of Rancher pods                                                                                                        |
 | `resources`                    | {}                                                    | `map` - rancher pod resource requests & limits                                                                                                    |
 | `restrictedAdmin` | `false` | _Available in Rancher v2.5_ `bool` - When this option is set to true, the initial Rancher user has restricted access to the local Kubernetes cluster to prevent privilege escalation. For more information, see the section about the [restricted-admin role.](../../how-to-guides/advanced-user-guides/authentication-permissions-and-global-configuration/manage-role-based-access-control-rbac/global-permissions.md#restricted-admin) |
-| `systemDefaultRegistry`        | ""                                                    | `string` - private registry to be used for all system Docker images, e.g., http://registry.example.com/                   |
+| `systemDefaultRegistry`        | ""                                                    | `string` - private registry to be used for all system Docker images, e.g., registry.example.com                       |
 | `tls`                          | "ingress"                                             | `string` - See [External TLS Termination](#external-tls-termination) for details. - "ingress, external"                                           |
 | `useBundledSystemChart`        | `false`                                               | `bool` - select to use the system-charts packaged with Rancher server. This option is used for air gapped installations.  |
 
@@ -152,7 +150,7 @@ kubectl -n cattle-system create secret generic tls-ca-additional --from-file=ca-
 
 For details on installing Rancher with a private registry, see [Air Gapped Helm CLI Install](../../pages-for-subheaders/air-gapped-helm-cli-install.md).
 
-# External TLS Termination
+## External TLS Termination
 
 We recommend configuring your load balancer as a Layer 4 balancer, forwarding plain 80/tcp and 443/tcp to the Rancher Management cluster nodes. The Ingress Controller on the cluster will redirect http traffic on port 80 to https on port 443.
 

@@ -1,11 +1,10 @@
 ---
 title: Setting up a High-availability RKE Kubernetes Cluster
-shortTitle: Set up RKE Kubernetes
-weight: 3
-aliases:
-  - /rancher/v2.0-v2.4/en/installation/k8s-install/kubernetes-rke
 ---
 
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-cluster-setup/rke1-for-rancher"/>
+</head>
 
 This section describes how to install a Kubernetes cluster. This cluster should be dedicated to run only the Rancher server.
 
@@ -24,7 +23,7 @@ For systems without direct internet access, refer to [Air Gap: Kubernetes instal
 >
 > In both single-node setups, Rancher can be installed with Helm on the Kubernetes cluster in the same way that it would be installed on any other cluster.
 
-# Installing Kubernetes
+## Installing Kubernetes
 
 ### Required CLI Tools
 

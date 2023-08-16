@@ -1,7 +1,10 @@
 ---
 title: Workload with Ingress Quick Start
-weight: 100
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/quick-start-guides/deploy-workloads/workload-ingress"/>
+</head>
 
 ### Prerequisite
 

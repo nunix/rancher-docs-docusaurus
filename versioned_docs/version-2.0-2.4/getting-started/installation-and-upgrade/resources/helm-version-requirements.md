@@ -1,12 +1,10 @@
 ---
 title: Helm Version Requirements
-weight: 3
-aliases:
-  - /rancher/v2.0-v2.4/en/installation/options/helm-version
-  - /rancher/v2.0-v2.4/en/installation/options/helm2
-  - /rancher/v2.0-v2.4/en/installation/options/helm2/helm-init
-  - /rancher/v2.0-v2.4/en/installation/options/helm2/helm-rancher
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/resources/helm-version-requirements"/>
+</head>
 
 This section contains the requirements for Helm, which is the tool used to install Rancher on a high-availability Kubernetes cluster.
 

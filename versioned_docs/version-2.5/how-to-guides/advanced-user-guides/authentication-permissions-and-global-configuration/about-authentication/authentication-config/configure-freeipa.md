@@ -1,10 +1,10 @@
 ---
 title: Configuring FreeIPA
-weight: 1114
-aliases:
-  - /rancher/v2.5/en/tasks/global-configuration/authentication/freeipa/
-  - /rancher/v2.x/en/admin-settings/authentication/freeipa/
 ---
+
+<head> 
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/authentication-permissions-and-global-configuration/authentication-config/configure-freeipa"/>
+</head>
 
 If your organization uses FreeIPA for user authentication, you can configure Rancher to allow your users to login using their FreeIPA credentials.
 

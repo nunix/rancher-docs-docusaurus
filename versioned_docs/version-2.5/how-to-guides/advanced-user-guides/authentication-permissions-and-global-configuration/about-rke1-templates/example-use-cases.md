@@ -1,9 +1,10 @@
 ---
 title: Example Scenarios
-weight: 5
-aliases:
-  - /rancher/v2.x/en/admin-settings/rke-templates/example-scenarios/
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/authentication-permissions-and-global-configuration/about-rke1-templates/example-use-cases"/>
+</head>
 
 These example scenarios describe how an organization could use templates to standardize cluster creation.
 

@@ -1,16 +1,6 @@
 ---
 title: CPU and Memory Allocations
-weight: 1
-aliases:
-  - /rancher/v2.5/en/project-admin/istio/configuring-resource-allocations/
-  - /rancher/v2.5/en/project-admin/istio/config/
-  - /rancher/v2.5/en/istio/resources
-  - /rancher/v2.5/en/istio/v2.5/resources
-  - /rancher/v2.x/en/istio/v2.5/resources/
 ---
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 This section describes the minimum recommended computing resources for the Istio components in a cluster.
 
@@ -49,7 +39,7 @@ Totals: | 1710m | 3304Mi | >8800m | >6048Mi | -
 </TabItem>
 </Tabs>
 
-# Configuring Resource Allocations
+## Configuring Resource Allocations
 
 You can individually configure the resource allocation for each type of Istio component. This section includes the default resource allocations for each component.
 

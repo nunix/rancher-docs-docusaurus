@@ -1,15 +1,14 @@
 ---
 title: Rendering the Helm Template in an Air Gapped Environment
-shortTitle: Air Gap Upgrade
-weight: 1
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/install-upgrade-on-a-kubernetes-cluster/air-gapped-upgrades"/>
+</head>
 
 > These instructions assume you have already followed the instructions for a Kubernetes upgrade on [this page,](upgrades.md) including the prerequisites, up until step 3. Upgrade Rancher.
 
-### Rancher Helm Template Options
+## Rancher Helm Template Options
 
 Render the Rancher template using the same chosen options that were used when installing Rancher. Use the reference table below to replace each placeholder. Rancher needs to be configured to use the private registry in order to provision any Rancher launched Kubernetes clusters or Rancher tools.
 
@@ -21,7 +20,6 @@ Placeholder | Description
 `<RANCHER.YOURDOMAIN.COM>` | The DNS name you pointed at your load balancer.
 `<REGISTRY.YOURDOMAIN.COM:PORT>` | The DNS name for your private registry.
 `<CERTMANAGER_VERSION>` | Cert-manager version running on k8s cluster.
-
 
 ### Option A: Default Self-signed Certificate
 
@@ -114,8 +112,7 @@ helm template rancher ./rancher-<VERSION>.tgz --output-dir . \
 </TabItem>
 </Tabs>
 
-
-### Apply the Rendered Templates
+## Apply the Rendered Templates
 
 Copy the rendered manifest directories to a system with access to the Rancher server cluster and apply the rendered templates.
 
@@ -125,7 +122,7 @@ Use `kubectl` to apply the rendered manifests.
 kubectl -n cattle-system apply -R -f ./rancher
 ```
 
-# Verify the Upgrade
+## Verify the Upgrade
 
 Log into Rancher to confirm that the upgrade succeeded.
 
@@ -133,6 +130,6 @@ Log into Rancher to confirm that the upgrade succeeded.
 >
 > See [Restoring Cluster Networking](../../../../version-2.0-2.4/getting-started/installation-and-upgrade/install-upgrade-on-a-kubernetes-cluster/upgrades/namespace-migration.md).
 
-# Known Upgrade Issues
+## Known Upgrade Issues
 
 A list of known issues for each Rancher version can be found in the release notes on [GitHub](https://github.com/rancher/rancher/releases) and on the [Rancher forums.](https://forums.rancher.com/c/announcements/12)

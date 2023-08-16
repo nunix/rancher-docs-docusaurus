@@ -1,7 +1,10 @@
 ---
 title: Roles for Nodes in Kubernetes
-weight: 1
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-clusters-in-rancher-setup/checklist-for-production-ready-clusters/roles-for-nodes-in-kubernetes"/>
+</head>
 
 This section describes the roles for etcd nodes, controlplane nodes, and worker nodes in Kubernetes, and how the roles work together in a cluster.
 
@@ -10,13 +13,13 @@ This diagram is applicable to Kubernetes clusters [launched with Rancher using R
 ![Cluster diagram](/img/clusterdiagram.svg)<br/>
 <sup>Lines show the traffic flow between components. Colors are used purely for visual aid</sup>
 
-# etcd
+## etcd
 
 Nodes with the `etcd` role run etcd, which is a consistent and highly available key value store used as Kubernetes’ backing store for all cluster data. etcd replicates the data to each node.
 
 >**Note:** Nodes with the `etcd` role are shown as `Unschedulable` in the UI, meaning no pods will be scheduled to these nodes by default.
 
-# controlplane
+## controlplane
 
 Nodes with the `controlplane` role run the Kubernetes master components (excluding `etcd`, as it's a separate role). See [Kubernetes: Master Components](https://kubernetes.io/docs/concepts/overview/components/#master-components) for a detailed list of components.
 
@@ -34,10 +37,10 @@ The Kubernetes controller manager uses leader election using an endpoint in Kube
 
 The Kubernetes scheduler uses leader election using an endpoint in Kubernetes. One instance of the `kube-scheduler` will create an entry in the Kubernetes endpoints and updates that entry in a configured interval. Other instances will see an active leader and wait for that entry to expire (for example, when a node is unresponsive).
 
-# worker
+## worker
 
 Nodes with the `worker` role run the Kubernetes node components. See [Kubernetes: Node Components](https://kubernetes.io/docs/concepts/overview/components/#node-components) for a detailed list of components.
 
-# References
+## References
 
 * [Kubernetes: Node Components](https://kubernetes.io/docs/concepts/overview/components/#node-components)

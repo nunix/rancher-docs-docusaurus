@@ -1,18 +1,10 @@
 ---
 title: '2. Collect and Publish Images to your Private Registry'
-weight: 200
-aliases:
-  - /rancher/v2.0-v2.4/en/installation/air-gap-installation/prepare-private-reg/
-  - /rancher/v2.0-v2.4/en/installation/air-gap-high-availability/prepare-private-registry/
-  - /rancher/v2.0-v2.4/en/installation/air-gap-single-node/prepare-private-registry/
-  - /rancher/v2.0-v2.4/en/installation/air-gap-single-node/config-rancher-for-private-reg/
-  - /rancher/v2.0-v2.4/en/installation/air-gap-high-availability/config-rancher-for-private-reg/
-  - /rancher/v2.0-v2.4/en/installation/options/air-gap-helm2/populate-private-registry
-  - /rancher/v2.x/en/installation/resources/advanced/air-gap-helm2/populate-private-registry/
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/other-installation-methods/air-gapped-helm-cli-install/publish-images"/>
+</head>
 
 > **Prerequisites:** You must have a [private registry](https://docs.docker.com/registry/deploying/) available to use.
 >

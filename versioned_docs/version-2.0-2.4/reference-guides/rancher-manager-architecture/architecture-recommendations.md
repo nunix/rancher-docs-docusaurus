@@ -1,11 +1,10 @@
 ---
 title: Architecture Recommendations
-weight: 3
 ---
 
 Kubernetes cluster. If you are installing Rancher on a single node, the main architecture recommendation that applies to your installation is that the cluster running Rancher should be [separate from downstream clusters.](#separation-of-rancher-and-user-clusters)
 
-# Separation of Rancher and User Clusters
+## Separation of Rancher and User Clusters
 
 A user cluster is a downstream Kubernetes cluster that runs your apps and services.
 
@@ -15,7 +14,7 @@ In Kubernetes installations of Rancher, the Rancher server cluster should also b
 
 ![Separation of Rancher Server from User Clusters](/img/rancher-architecture-separation-of-rancher-server.svg)
 
-# Why HA is Better for Rancher in Production
+## Why HA is Better for Rancher in Production
 
 We recommend installing the Rancher server on a high-availability Kubernetes cluster, primarily because it protects the Rancher server data. In a high-availability installation, a load balancer serves as the single point of contact for clients, distributing network traffic across multiple servers in the cluster and helping to prevent any one server from becoming a point of failure.
 
@@ -45,7 +44,7 @@ In an RKE installation, the cluster data is replicated on each of three etcd nod
 
 ![Architecture of an RKE Kubernetes cluster running the Rancher management server](/img/rke-server-storage.svg)
 
-# Recommended Load Balancer Configuration for Kubernetes Installations
+## Recommended Load Balancer Configuration for Kubernetes Installations
 
 We recommend the following configurations for the load balancer and Ingress controllers:
 
@@ -58,7 +57,7 @@ We recommend the following configurations for the load balancer and Ingress cont
 
 ![Rancher HA](/img/ha/rancher2ha.svg)
 
-# Environment for Kubernetes Installations
+## Environment for Kubernetes Installations
 
 It is strongly recommended to install Rancher on a Kubernetes cluster on hosted infrastructure such as Amazon's EC2 or Google Compute Engine.
 
@@ -66,7 +65,7 @@ For the best performance and greater security, we recommend a dedicated Kubernet
 
 It is not recommended to install Rancher on top of a managed Kubernetes service such as Amazon’s EKS or Google Kubernetes Engine. These hosted Kubernetes solutions do not expose etcd to a degree that is manageable for Rancher, and their customizations can interfere with Rancher operations.
 
-# Recommended Node Roles for Kubernetes Installations
+## Recommended Node Roles for Kubernetes Installations
 
 Our recommendations for the roles of each node differ depending on whether Rancher is installed on a K3s Kubernetes cluster or an RKE Kubernetes cluster.
 
@@ -108,8 +107,8 @@ Because no additional workloads will be deployed on the Rancher server cluster, 
 
 For more best practices for downstream clusters, refer to the [production checklist](../../pages-for-subheaders/checklist-for-production-ready-clusters.md) or our [best practices guide.](../../pages-for-subheaders/best-practices.md)
 
-# Architecture for an Authorized Cluster Endpoint
+## Architecture for an Authorized Cluster Endpoint
 
-If you are using an [authorized cluster endpoint,](../../pages-for-subheaders/rancher-manager-architecture.md#4-authorized-cluster-endpoint) we recommend creating an FQDN pointing to a load balancer which balances traffic across your nodes with the `controlplane` role.
+If you are using an [authorized cluster endpoint,](../../reference-guides/rancher-manager-architecture/communicating-with-downstream-user-clusters.md#4-authorized-cluster-endpoint) we recommend creating an FQDN pointing to a load balancer which balances traffic across your nodes with the `controlplane` role.
 
 If you are using private CA signed certificates on the load balancer, you have to supply the CA certificate, which will be included in the generated kubeconfig file to validate the certificate chain. See the documentation on [kubeconfig files](../../how-to-guides/advanced-user-guides/manage-clusters/access-clusters/use-kubectl-and-kubeconfig.md) and [API keys](../user-settings/api-keys.md#creating-an-api-key) for more information.

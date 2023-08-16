@@ -1,15 +1,10 @@
 ---
 title: Managing GKE Clusters
-shortTitle: Google Kubernetes Engine
-weight: 2105
-aliases:
-  - /rancher/v2.5/en/tasks/clusters/creating-a-cluster/create-cluster-gke/
-  - /rancher/v2.5/en/cluster-provisioning/hosted-kubernetes-clusters/gke
-  - /rancher/v2.x/en/cluster-provisioning/hosted-kubernetes-clusters/gke/
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-clusters-in-rancher-setup/set-up-clusters-from-hosted-kubernetes-providers/gke"/>
+</head>
 
 <Tabs>
 <TabItem value="Rancher v2.5.8+">

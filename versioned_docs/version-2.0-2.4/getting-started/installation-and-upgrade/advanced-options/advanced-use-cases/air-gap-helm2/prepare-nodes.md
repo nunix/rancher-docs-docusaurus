@@ -1,19 +1,14 @@
 ---
 title: '1. Prepare your Node(s)'
-weight: 100
-aliases:
-  - /rancher/v2.0-v2.4/en/installation/air-gap-high-availability/provision-hosts
-  - /rancher/v2.0-v2.4/en/installation/air-gap-single-node/provision-host
-  - /rancher/v2.0-v2.4/en/installation/options/air-gap-helm2/prepare-nodes
-  - /rancher/v2.x/en/installation/resources/advanced/air-gap-helm2/prepare-nodes/
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/other-installation-methods/air-gapped-helm-cli-install/infrastructure-private-registry"/>
+</head>
 
 This section is about how to prepare your node(s) to install Rancher for your air gapped environment. An air gapped environment could be where Rancher server will be installed offline, behind a firewall, or behind a proxy. There are _tabs_ for either a high availability (recommended) or a Docker installation.
 
-# Prerequisites
+## Prerequisites
 
 <Tabs>
 <TabItem value="Kubernetes Install (Recommended)">
@@ -53,7 +48,7 @@ If you need help with creating a private registry, please refer to the [Docker d
 </TabItem>
 </Tabs>
 
-# Set up Infrastructure
+## Set up Infrastructure
 
 <Tabs>
 <TabItem value="Kubernetes Install (Recommended)">

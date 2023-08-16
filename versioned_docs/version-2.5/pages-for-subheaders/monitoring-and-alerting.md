@@ -1,11 +1,6 @@
 ---
 title: Monitoring and Alerting
-shortTitle: Monitoring/Alerting
 description: Prometheus lets you view metrics from your different Rancher and Kubernetes objects. Learn about the scope of monitoring and how to enable cluster monitoring
-weight: 13
-aliases:
-  - /rancher/v2.x/en/monitoring-alerting/
-  - /rancher/v2.x/en/monitoring-alerting/v2.5/
 ---
 
 Using the `rancher-monitoring` application, you can quickly deploy leading open-source monitoring and alerting solutions onto your cluster.
@@ -28,11 +23,11 @@ The monitoring application allows you to:
 - Defines precomputed, frequently needed or computationally expensive expressions as new time series based on metrics collected via Prometheus
 - Expose collected metrics from Prometheus to the Kubernetes Custom Metrics API via Prometheus Adapter for use in HPA
 
-# How Monitoring Works
+## How Monitoring Works
 
 For an explanation of how the monitoring components work together, see [this page.](../explanations/integrations-in-rancher/monitoring-and-alerting/how-monitoring-works.md)
 
-# Default Components and Deployments
+## Default Components and Deployments
 
 ### Built-in Dashboards
 
@@ -53,11 +48,11 @@ The monitoring application deploys some alerts by default. To see the default al
 
 For a list of monitoring components exposed in the Rancher UI, along with common use cases for editing them, see [this section.](../explanations/integrations-in-rancher/monitoring-and-alerting/how-monitoring-works.md#components-exposed-in-the-rancher-ui)
 
-# Role-based Access Control
+## Role-based Access Control
 
 For information on configuring access to monitoring, see [this page.](../explanations/integrations-in-rancher/monitoring-and-alerting/rbac-for-monitoring.md)
 
-# Guides
+## Guides
 
 - [Enable monitoring](../how-to-guides/advanced-user-guides/monitoring-alerting-guides/enable-monitoring.md)
 - [Uninstall monitoring](../how-to-guides/advanced-user-guides/monitoring-alerting-guides/uninstall-monitoring.md)
@@ -67,7 +62,7 @@ For information on configuring access to monitoring, see [this page.](../explana
 - [Debugging high memory usage](../how-to-guides/advanced-user-guides/monitoring-alerting-guides/debug-high-memory-usage.md)
 - [Migrating from Monitoring V1 to V2](../how-to-guides/advanced-user-guides/monitoring-alerting-guides/migrate-to-rancher-v2.5+-monitoring.md)
 
-# Configuration
+## Configuration
 
 ### Configuring Monitoring Resources in Rancher
 
@@ -84,7 +79,7 @@ For information on configuring access to monitoring, see [this page.](../explana
 
 For more information on `rancher-monitoring` chart options, including options to set resource limits and requests, see [this page.](../reference-guides/monitoring-v2-configuration/helm-chart-options.md)
 
-# Windows Cluster Support
+## Windows Cluster Support
 
 _Available as of v2.5.8_
 
@@ -94,9 +89,7 @@ To be able to fully deploy Monitoring V2 for Windows, all of your Windows hosts 
 
 For more details on how to upgrade wins on existing Windows hosts, refer to the section on [Windows cluster support for Monitoring V2.](../explanations/integrations-in-rancher/monitoring-and-alerting/windows-support.md)
 
-
-
-# Known Issues
+## Known Issues
 
 There is a [known issue](https://github.com/rancher/rancher/issues/28787#issuecomment-693611821) that K3s clusters require more default memory. If you are enabling monitoring on a K3s cluster, we recommend setting `prometheus.prometheusSpec.resources.memory.limit` to 2500 Mi and `prometheus.prometheusSpec.resources.memory.request` to 1750 Mi.
 

@@ -1,9 +1,10 @@
 ---
 title: Managing HPAs with the Rancher UI
-weight: 3028
-aliases:
-  - /rancher/v2.0-v2.4/en/k8s-in-rancher/horizontal-pod-autoscaler/manage-hpa-with-rancher-ui
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-resources-setup/horizontal-pod-autoscaler/manage-hpas-with-ui"/>
+</head>
 
 _Available as of v2.3.0_
 

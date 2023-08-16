@@ -1,11 +1,10 @@
 ---
 title: '3. Install Kubernetes with RKE (Kubernetes Installs Only)'
-weight: 300
-aliases:
-  - /rancher/v2.0-v2.4/en/installation/air-gap-high-availability/install-kube
-  - /rancher/v2.0-v2.4/en/installation/options/air-gap-helm2/launch-kubernetes
-  - /rancher/v2.x/en/installation/resources/advanced/air-gap-helm2/launch-kubernetes/
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/other-installation-methods/air-gapped-helm-cli-install/install-kubernetes"/>
+</head>
 
 This section is about how to prepare to launch a Kubernetes cluster which is used to deploy Rancher server for your air gapped environment.
 

@@ -1,21 +1,6 @@
 ---
 title: Backing up Rancher Installed on an RKE Kubernetes Cluster
-shortTitle: RKE Installs
-weight: 2
-aliases:
-  - /rancher/v2.0-v2.4/en/installation/after-installation/k8s-install-backup-and-restoration/
-  - /rancher/v2.0-v2.4/en/installation/backups-and-restoration/ha-backup-and-restoration/
-  - /rancher/v2.0-v2.4/en/backups/backups/ha-backups
-  - /rancher/v2.0-v2.4/en/backups/backups/k8s-backups/ha-backups
-  - /rancher/v2.0-v2.4/en/backups/legacy/backup/k8s-backups/ha-backups/
-  - /rancher/v2.0-v2.4/en/backups/legacy/backups/ha-backups
-  - /rancher/v2.0-v2.4/en/backups/legacy/backup/ha-backups
-  - /rancher/v2.0-v2.4/en/backups/v2.0.x-v2.4.x/backup/rke-backups
-  - /rancher/v2.x/en/backups/v2.0.x-v2.4.x/backup/rke-backups/
 ---
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 This section describes how to create backups of your high-availability Rancher install.
 
@@ -25,7 +10,7 @@ In an RKE installation, the cluster data is replicated on each of three etcd nod
 
 ![Architecture of an RKE Kubernetes cluster running the Rancher management server](/img/rke-server-storage.svg)
 
-# Requirements
+## Requirements
 
 ### RKE Version
 
@@ -35,9 +20,7 @@ The commands for taking `etcd` snapshots are only available in RKE v0.1.7 and la
 
 You'll need the RKE config file that you used for Rancher install, `rancher-cluster.yml`. You created this file during your initial install. Place this file in same directory as the RKE binary.
 
-
-# Backup Outline
-
+## Backup Outline
 
 Backing up your high-availability Rancher cluster is process that involves completing multiple tasks.
 
@@ -50,7 +33,7 @@ Backing up your high-availability Rancher cluster is process that involves compl
     After taking your snapshots, export them to a safe location that won't be affected if your cluster encounters issues.
 
 
-# 1. Take Snapshots of the `etcd` Database
+## 1. Take Snapshots of the `etcd` Database
 
 Take snapshots of your `etcd` database. You can use these snapshots later to recover from a disaster scenario. There are two ways to take snapshots: recurringly, or as a one-off.  Each option is better suited to a specific use case. Read the short description below each link to know when to use each option.
 
@@ -173,7 +156,7 @@ _Available as of RKE v0.2.0_
 
 **Result:** RKE takes a snapshot of `etcd` running on each `etcd` node. The file is saved to `/opt/rke/etcd-snapshots`. It is also uploaded to the S3 compatible backend.
 
-# 2. Back up Local Snapshots to a Safe Location
+## 2. Back up Local Snapshots to a Safe Location
 
 > **Note:** If you are using RKE v0.2.0, you can enable saving the backups to a S3 compatible backend directly and skip this step.
 

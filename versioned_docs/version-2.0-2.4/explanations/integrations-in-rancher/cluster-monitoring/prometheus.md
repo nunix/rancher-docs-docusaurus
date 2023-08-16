@@ -1,12 +1,5 @@
 ---
 title: Prometheus Configuration
-weight: 1
-aliases:
-  - /rancher/v2.0-v2.4/en/project-admin/tools/monitoring/prometheus
-  - /rancher/v2.0-v2.4/en/cluster-admin/tools/monitoring/prometheus/
-  - /rancher/v2.0-v2.4/en/monitoring-alerting/legacy/monitoring/cluster-monitoring/prometheus
-  - /rancher/v2.0-v2.4/en/monitoring-alerting/v2.0.x-v2.4.x/cluster-monitoring/prometheus
-  - /rancher/v2.x/en/monitoring-alerting/v2.0.x-v2.4.x/cluster-monitoring/prometheus/
 ---
 
 _Available as of v2.2.0_
@@ -19,7 +12,7 @@ While configuring monitoring at either the [cluster level](../../../pages-for-su
 - [Persistent Storage](#persistent-storage)
 - [Remote Storage](#remote-storage)
 
-# Basic Configuration
+## Basic Configuration
 
 Option | Description
 -------|-------------
@@ -34,7 +27,7 @@ Prometheus [Memory Limit](https://kubernetes.io/docs/concepts/configuration/mana
 Prometheus [Memory Reservation](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/#meaning-of-memory) | Memory resource requests for the Prometheus pod.
 Selector | Ability to select the nodes in which Prometheus and Grafana pods are deployed to. To use this option, the nodes must have labels.
 
-# Advanced Options
+## Advanced Options
 
 Since monitoring is an [application](https://github.com/rancher/system-charts/tree/dev/charts/rancher-monitoring) from the [Rancher catalog](../../../pages-for-subheaders/helm-charts-in-rancher.md), it can be configured like any other catalog application, by passing in values to Helm.
 
@@ -71,7 +64,7 @@ Some example key-value pairs are:
 | `prometheus.livenessProbe.timeoutSeconds` | 60 |
 | `prometheus.readinessProbe.timeoutSeconds` | 60 |
 
-# Node Exporter
+## Node Exporter
 
 The [node exporter](https://github.com/prometheus/node_exporter/blob/master/README.md) is a popular open source exporter, which exposes the metrics for hardware and \*NIX kernels OS. It is designed to monitor the host system. However, there are still issues with namespaces when running it in a container, mostly around filesystem mount spaces. In order to monitor actual network metrics for the container network, the node exporter must be deployed with the `hostNetwork` mode.
 
@@ -79,7 +72,7 @@ When configuring Prometheus and enabling the node exporter, enter a host port in
 
 >**Warning:** In order for Prometheus to collect the metrics of the node exporter, after enabling cluster monitoring, you must open the <b>Node Exporter Host Port</b> in the host firewall rules to allow intranet access. By default, `9796` is used as that host port.
 
-# Persistent Storage
+## Persistent Storage
 
 >**Prerequisite:** Configure one or more StorageClasses to use as [persistent storage](../../../pages-for-subheaders/create-kubernetes-persistent-storage.md) for your Prometheus or Grafana pod.
 
@@ -87,7 +80,7 @@ By default, when you enable Prometheus for either a cluster or project, all moni
 
 When enabling persistent storage for Prometheus or Grafana, specify the size of the persistent volume and select the StorageClass.
 
-# Remote Storage
+## Remote Storage
 
 >**Prerequisite:** Need a remote storage endpoint to be available. The possible list of integrations is available [here](https://prometheus.io/docs/operating/integrations/)
 

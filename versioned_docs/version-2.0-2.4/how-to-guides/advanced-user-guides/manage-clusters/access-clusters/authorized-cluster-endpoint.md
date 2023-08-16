@@ -1,7 +1,10 @@
 ---
 title: How the Authorized Cluster Endpoint Works
-weight: 2015
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/manage-clusters/access-clusters/authorized-cluster-endpoint"/>
+</head>
 
 This section describes how the kubectl CLI, the kubeconfig file, and the authorized cluster endpoint work together to allow you to access a downstream Kubernetes cluster directly, without authenticating through the Rancher server. It is intended to provide background information and context to the instructions for [how to set up kubectl to directly access a cluster.](use-kubectl-and-kubeconfig.md#authenticating-directly-with-a-downstream-cluster)
 
@@ -35,7 +38,7 @@ These methods of communicating with downstream Kubernetes clusters are also expl
 
 ### About the kube-api-auth Authentication Webhook
 
-The `kube-api-auth` microservice is deployed to provide the user authentication functionality for the [authorized cluster endpoint,](../../../../pages-for-subheaders/rancher-manager-architecture.md#4-authorized-cluster-endpoint) which is only available for [RKE clusters.](../../../../pages-for-subheaders/launch-kubernetes-with-rancher.md) When you access the user cluster using `kubectl`, the cluster's Kubernetes API server authenticates you by using the `kube-api-auth` service as a webhook.
+The `kube-api-auth` microservice is deployed to provide the user authentication functionality for the [authorized cluster endpoint,](../../../../reference-guides/rancher-manager-architecture/communicating-with-downstream-user-clusters.md#4-authorized-cluster-endpoint) which is only available for [RKE clusters.](../../../../pages-for-subheaders/launch-kubernetes-with-rancher.md) When you access the user cluster using `kubectl`, the cluster's Kubernetes API server authenticates you by using the `kube-api-auth` service as a webhook.
 
 During cluster provisioning, the file `/etc/kubernetes/kube-api-authn-webhook.yaml` is deployed and `kube-apiserver` is configured with `--authentication-token-webhook-config-file=/etc/kubernetes/kube-api-authn-webhook.yaml`. This configures the `kube-apiserver` to query `http://127.0.0.1:6440/v1/authenticate` to determine authentication for bearer tokens.
 

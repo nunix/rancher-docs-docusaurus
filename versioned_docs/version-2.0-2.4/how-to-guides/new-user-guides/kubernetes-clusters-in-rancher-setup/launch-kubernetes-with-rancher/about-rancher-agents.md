@@ -1,7 +1,10 @@
 ---
 title: Rancher Agents
-weight: 2400
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/launch-kubernetes-with-rancher/about-rancher-agents"/>
+</head>
 
 There are two different agent resources deployed on Rancher managed clusters:
 

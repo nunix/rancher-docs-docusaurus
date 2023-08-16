@@ -1,21 +1,14 @@
 ---
 title: Helm Charts in Rancher
-weight: 11
 ---
 
-In this section, you'll learn how to manage Helm chart repositories and applications in Rancher. Helm chart repositories are managed using **Apps & Marketplace**. It uses a catalog-like system to import bundles of charts from repositories and then uses those charts to either deploy custom Helm applications or Rancher's tools such as Monitoring or Istio. Rancher tools come as pre-loaded repositories which deploy as standalone Helm charts. Any additional repositories are only added to the current cluster.
+In this section, you'll learn how to manage Helm chart repositories and applications in Rancher. Helm chart repositories are managed using **Apps**. It uses a catalog-like system to import bundles of charts from repositories and then uses those charts to either deploy custom Helm applications or Rancher's tools such as Monitoring or Istio. Rancher tools come as pre-loaded repositories which deploy as standalone Helm charts. Any additional repositories are only added to the current cluster.
 
-### Changes in Rancher v2.6
+### Versioning Scheme
 
-Starting in Rancher v2.6.0, a new versioning scheme for Rancher feature charts was implemented. The changes are centered around the major version of the charts and the +up annotation for upstream charts, where applicable.
+The Rancher feature charts versioning scheme is centered around the major version of the charts and the `+up` annotation for upstream charts, where applicable.
 
-**Major Version:** The major version of the charts is tied to Rancher minor versions. When you upgrade to a new Rancher minor version, you should ensure that all of your **Apps & Marketplace** charts are also upgraded to the correct release line for the chart.
-
-:::note
-
-Any major versions that are less than the ones mentioned in the table below are meant for 2.5 and below only. For example, you are advised to not use <100.x.x versions of Monitoring in 2.6.x+.
-
-:::
+**Major Version:** The major version of the charts is tied to Rancher minor versions. When you upgrade to a new Rancher minor version, you should ensure that all of your **Apps** charts are also upgraded to the correct release line for the chart.
 
 **Feature Charts:**
 
@@ -45,10 +38,19 @@ Any major versions that are less than the ones mentioned in the table below are 
 
 - On upgrades, ensure that you are not downgrading the version of the chart that you are using. For example, if you are using a version of Monitoring > `16.6.0` in Rancher 2.5, you should not upgrade to `100.x.x+up16.6.0`. Instead, you should upgrade to the appropriate version in the next release.
 
+### Prerelease Versions
+
+Prereleases adhere to [the specification](https://semver.org/#spec-item-9) defined by [Semantic Versioning 2.0.0](https://semver.org/). For example, a Helm chart with a version of `0.1.3-dev.12ab4f` is considered a prerelease. Prerelease versions are not displayed by default and must be configured to do so.
+
+To display prerelease versions:
+
+1. Click on your user avatar in the upper right corner.
+1. Click **Preferences**.
+1. Under **Helm Charts**, select **Include Prerelease Versions**.
 
 ### Charts
 
-From the top-left menu select _"Apps & Marketplace"_ and you will be taken to the Charts page.
+From the top-left menu select _"Apps"_ and you will be taken to the Charts page.
 
 The charts page contains all Rancher, Partner, and Custom Charts.
 
@@ -60,7 +62,7 @@ All three types are deployed and managed in the same way.
 
 :::note
 
-Apps managed by the Cluster Manager (the global view in the legacy Rancher UI) should continue to be managed only by the Cluster Manager, and apps managed with <b>Apps & Marketplace</b> in the new UI must be managed only by <b>Apps & Marketplace</b>.
+Apps managed by the Cluster Manager (the global view in the legacy Rancher UI) should continue to be managed only by the Cluster Manager, and apps managed with <b>Apps</b> in the new UI must be managed only by <b>Apps</b>.
 
 :::
 
@@ -95,10 +97,9 @@ To add a private CA for Helm Chart repositories:
     [...]
     ```
 
-
 :::note Helm chart repositories with authentication
 
-As of Rancher v2.6.3, a new value `disableSameOriginCheck` has been added to the Repo.Spec. This allows users to bypass the same origin checks, sending the repository Authentication information as a Basic Auth Header with all API calls. This is not recommended but can be used as a temporary solution in cases of non-standard Helm chart repositories such as those that have redirects to a different origin URL.
+The Repo.Spec contains a `disableSameOriginCheck` value that allows users to bypass the same origin checks, sending the repository Authentication information as a Basic Auth Header with all API calls. This is not recommended but can be used as a temporary solution in cases of non-standard Helm chart repositories such as those that have redirects to a different origin URL.
 
 To use this feature for an existing Helm chart repository, click <b>⋮ > Edit YAML</b>. On the `spec` portion of the YAML file, add `disableSameOriginCheck` and set it to `true`.
 
@@ -124,7 +125,7 @@ To view all recent changes, go to the _"Recent Operations"_ tab. From there you 
 
 After installing a chart, you can find it in the _"Installed Apps"_ tab. In this section you can upgrade or delete the installation, and see further details. When choosing to upgrade, the form and values presented will be the same as installation.
 
-Most Rancher tools have additional pages located in the toolbar below the _"Apps & Marketplace"_ section to help manage and use the features. These pages include links to dashboards, forms to easily add Custom Resources, and additional information.
+Most Rancher tools have additional pages located in the toolbar below the _"Apps"_ section to help manage and use the features. These pages include links to dashboards, forms to easily add Custom Resources, and additional information.
 
 :::caution
 
@@ -136,9 +137,9 @@ If you are upgrading your chart using _"Customize Helm options before upgrade"_ 
 
 :::
 
-#### Changes in Rancher v2.6.3
+#### Legacy Apps
 
-The upgrade button has been removed for legacy apps from the **Apps & Marketplace > Installed Apps** page.
+The upgrade button has been removed for legacy apps from the **Apps > Installed Apps** page.
 
 If you have a legacy app installed and want to upgrade it:
 

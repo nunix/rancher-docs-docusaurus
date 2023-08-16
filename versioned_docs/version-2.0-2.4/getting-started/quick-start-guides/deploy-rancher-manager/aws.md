@@ -1,8 +1,12 @@
 ---
 title: Rancher AWS Quick Start Guide
 description: Read this step by step Rancher AWS guide to quickly deploy a Rancher Server with a single node cluster attached.
-weight: 100
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/quick-start-guides/deploy-rancher-manager/aws"/>
+</head>
+
 The following steps will quickly deploy a Rancher Server on AWS with a single node cluster attached.
 
 >**Note:** The intent of these guides is to quickly launch a sandbox that you can use to evaluate Rancher. These guides are not intended for production environments. For comprehensive setup instructions, see [Installation](../../../pages-for-subheaders/installation-and-upgrade.md).
@@ -21,7 +25,7 @@ The following steps will quickly deploy a Rancher Server on AWS with a single no
 
 1. Clone [Rancher Quickstart](https://github.com/rancher/quickstart) to a folder using `git clone https://github.com/rancher/quickstart`.
 
-1. Go into the AWS folder containing the terraform files by executing `cd quickstart/aws`.
+1. Go into the AWS folder containing the Terraform files by executing `cd quickstart/aws`.
 
 1. Rename the `terraform.tfvars.example` file to `terraform.tfvars`.
 

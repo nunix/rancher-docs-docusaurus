@@ -1,13 +1,10 @@
 ---
 title: Choosing a Rancher Version
-weight: 1
-aliases:
-  - /rancher/v2.5/en/installation/options/server-tags
-  - /rancher/v2.x/en/installation/resources/choosing-version/
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/resources/choose-a-rancher-version"/>
+</head>
 
 This section describes how to choose a Rancher version.
 
@@ -68,7 +65,7 @@ After installing Rancher, if you want to change which Helm chart repository to i
     ```
 - Alpha: Experimental preview of upcoming releases.
     ```
-    helm repo add rancher-stable https://releases.rancher.com/server-charts/stable
+    helm repo add rancher-alpha https://releases.rancher.com/server-charts/alpha
     ```
     Note: Upgrades are not supported to, from, or between Alphas.
 

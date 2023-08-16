@@ -1,7 +1,10 @@
 ---
 title: Setting up the Azure Cloud Provider
-weight: 2
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-clusters-in-rancher-setup/set-up-cloud-providers/azure"/>
+</head>
 
 When using the `Azure` cloud provider, you can leverage the following capabilities:
 
@@ -29,7 +32,7 @@ Visit [Azure portal](https://portal.azure.com), login and go to **Azure Active D
 
 If you want to use the Azure CLI, you can run the command `az account show` to get the information.
 
-### 2. Set up the Azure Client ID and Azure Client Secret 
+### 2. Set up the Azure Client ID and Azure Client Secret
 
 Visit [Azure portal](https://portal.azure.com), login and follow the steps below to create an **App Registration** and the corresponding **Azure Client ID** (aadClientId) and **Azure Client Secret** (aadClientSecret).
 

@@ -1,10 +1,10 @@
 ---
 title: Upgrading Kubernetes without Upgrading Rancher
-weight: 1120
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/upgrade-kubernetes-without-upgrading-rancher"/>
+</head>
 
 _Available as of v2.3.0_
 

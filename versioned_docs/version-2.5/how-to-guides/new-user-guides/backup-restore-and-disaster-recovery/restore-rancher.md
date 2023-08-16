@@ -1,13 +1,12 @@
 ---
 title: Restoring Rancher
-weight: 2
-aliases:
-  - /rancher/v2.x/en/installation/backups/restores
-  - /rancher/v2.x/en/backups/restoring-rancher
-  - /rancher/v2.x/en/backups/v2.5/restoring-rancher/
 ---
 
-A restore is performed by creating a Restore custom resource. 
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/backup-restore-and-disaster-recovery/restore-rancher"/>
+</head>
+
+A restore is performed by creating a Restore custom resource.
 
 > **Important**
 >

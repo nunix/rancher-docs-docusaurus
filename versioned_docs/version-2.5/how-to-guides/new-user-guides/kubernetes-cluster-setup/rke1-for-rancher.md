@@ -1,12 +1,10 @@
 ---
 title: Setting up a High-availability RKE Kubernetes Cluster
-shortTitle: Set up RKE Kubernetes
-weight: 3
-aliases:
-  - /rancher/v2.5/en/installation/k8s-install/kubernetes-rke
-  - /rancher/v2.x/en/installation/resources/k8s-tutorials/ha-rke/
 ---
 
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-cluster-setup/rke1-for-rancher"/>
+</head>
 
 This section describes how to install a Kubernetes cluster. This cluster should be dedicated to run only the Rancher server.
 
@@ -21,7 +19,7 @@ For systems without direct internet access, refer to [Air Gap: Kubernetes instal
 >
 > In both single-node setups, Rancher can be installed with Helm on the Kubernetes cluster in the same way that it would be installed on any other cluster.
 
-# Installing Kubernetes
+## Installing Kubernetes
 
 ### Required CLI Tools
 
@@ -38,6 +36,8 @@ Using the sample below as a guide, create the `rancher-cluster.yml` file. Replac
 If your node has public and internal addresses, it is recommended to set the `internal_address:` so Kubernetes will use it for intra-cluster communication. Some services like AWS EC2 require setting the `internal_address:` if you want to use self-referencing security groups or firewalls.
 
 RKE will need to connect to each node over SSH, and it will look for a private key in the default location of `~/.ssh/id_rsa`. If your private key for a certain node is in a different location than the default, you will also need to configure the `ssh_key_path` option for that node.
+
+When choosing a Kubernetes version, be sure to first consult the [support matrix](https://rancher.com/support-matrix/) to find the highest version of Kubernetes that has been validated for your Rancher version.
 
 ```yaml
 nodes:
@@ -66,6 +66,8 @@ ingress:
   provider: nginx
   options:
     use-forwarded-headers: "true"
+
+kubernetes_version: v1.20.15-rancher2-1
 ```
 
 <figcaption>Common RKE Nodes Options</figcaption>

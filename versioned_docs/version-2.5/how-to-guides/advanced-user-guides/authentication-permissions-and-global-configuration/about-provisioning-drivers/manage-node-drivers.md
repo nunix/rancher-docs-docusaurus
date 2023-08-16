@@ -1,11 +1,10 @@
 ---
 title: Node Drivers
-weight: 2
-aliases:
-  - /rancher/v2.5/en/concepts/global-configuration/node-drivers/
-  - /rancher/v2.5/en/tasks/global-configuration/node-drivers/
-  - /rancher/v2.x/en/admin-settings/drivers/node-drivers/
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/authentication-permissions-and-global-configuration/about-provisioning-drivers/manage-node-drivers"/>
+</head>
 
 Node drivers are used to provision hosts, which Rancher uses to launch and manage Kubernetes clusters. A node driver is the same as a [Docker Machine driver](https://docs.docker.com/machine/drivers/). The availability of which node driver to display when creating node templates is defined based on the node driver's status. Only `active` node drivers will be displayed as an option for creating node templates. By default, Rancher is packaged with many existing Docker Machine drivers, but you can also create custom node drivers to add to Rancher.
 

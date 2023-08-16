@@ -1,8 +1,5 @@
 ---
 title: Security
-weight: 20
-aliases:
-  - /rancher/v2.x/en/security/rancher-2.5/
 ---
 
 <table width="100%">
@@ -51,7 +48,7 @@ We provide two RPMs (Red Hat packages) that enable Rancher products to function 
 
 The Rancher Hardening Guide is based on controls and best practices found in the <a href="https://www.cisecurity.org/benchmark/kubernetes/" target="_blank">CIS Kubernetes Benchmark</a> from the Center for Internet Security.
 
-The hardening guides provide prescriptive guidance for hardening a production installation of Rancher. See Rancher's guides for [Self Assessment of the CIS Kubernetes Benchmark](#the-cis-benchmark-and-self-sssessment) for the full list of security controls.
+The hardening guides provide prescriptive guidance for hardening a production installation of Rancher. See Rancher's guides for [Self Assessment of the CIS Kubernetes Benchmark](#the-cis-benchmark-and-self-assessment) for the full list of security controls.
 
 > The hardening guides describe how to secure the nodes in your cluster, and it is recommended to follow a hardening guide before installing Kubernetes.
 
@@ -67,7 +64,7 @@ Each version of Rancher's self-assessment guide corresponds to specific versions
 
 ### Third-party Penetration Test Reports
 
-Rancher periodically hires third parties to perform security audits and penetration tests of the Rancher 2.x software stack. The environments under test follow the Rancher provided hardening guides at the time of the testing. Results are posted when the third party has also verified fixes classified MEDIUM or above.
+Rancher periodically hires third parties to perform security audits and penetration tests of the Rancher 2.x software stack. The environments under test follow the Rancher provided hardening guides at the time of the testing. Previous penetration test reports are available below.
 
 Results:
 

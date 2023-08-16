@@ -1,9 +1,10 @@
 ---
 title: Dynamically Provisioning New Storage in Rancher
-weight: 2
-aliases:
-  - /rancher/v2.x/en/cluster-admin/volumes-and-storage/provisioning-new-storage/
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/manage-clusters/create-kubernetes-persistent-storage/manage-persistent-storage/dynamically-provision-new-storage"/>
+</head>
 
 This section describes how to provision new persistent storage for workloads in Rancher.
 

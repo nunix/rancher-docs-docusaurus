@@ -1,14 +1,8 @@
 ---
 title: Release Notes
-aliases:
-  - /rancher/v2.0-v2.4/en/cluster-admin/tools/istio/release-notes
-  - /rancher/v2.0-v2.4/en/istio/legacy/release-notes
-  - /rancher/v2.0-v2.4/en/istio/v2.3.x-v2.4.x/release-notes
-  - /rancher/v2.x/en/istio/v2.3.x-v2.4.x/release-notes/
 ---
 
-
-# Istio 1.5.8
+## Istio 1.5.8
 
 ### Important note on 1.5.x versions
 

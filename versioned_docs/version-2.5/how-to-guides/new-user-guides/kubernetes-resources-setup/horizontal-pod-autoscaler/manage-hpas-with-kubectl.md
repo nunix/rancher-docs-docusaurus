@@ -1,10 +1,10 @@
 ---
 title: Managing HPAs with kubectl
-weight: 3029
-aliases:
-  - /rancher/v2.5/en/k8s-in-rancher/horizontal-pod-autoscaler/manage-hpa-with-kubectl
-  - /rancher/v2.x/en/k8s-in-rancher/horitzontal-pod-autoscaler/manage-hpa-with-kubectl/
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-resources-setup/horizontal-pod-autoscaler/manage-hpas-with-kubectl"/>
+</head>
 
 This section describes HPA management with `kubectl`. This document has instructions for how to:
 

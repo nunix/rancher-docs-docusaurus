@@ -1,9 +1,10 @@
 ---
 title: Cluster Autoscaler with AWS EC2 Auto Scaling Groups
-weight: 1
-aliases:
-  - /rancher/v2.x/en/cluster-admin/cluster-autoscaler/amazon/
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/manage-clusters/install-cluster-autoscaler/use-aws-ec2-auto-scaling-groups"/>
+</head>
 
 This guide will show you how to install and use [Kubernetes cluster-autoscaler](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/) on Rancher custom clusters using AWS EC2 Auto Scaling Groups.
 
@@ -324,7 +325,7 @@ cloud-provider|-|Cloud provider type|
 
 #### Deployment
 
-Based on [cluster-autoscaler-run-on-master.yaml](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/examples/cluster-autoscaler-run-on-master.yaml) example, we've created our own `cluster-autoscaler-deployment.yaml` to use preferred [auto-discovery setup](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler/cloudprovider/aws#auto-discovery-setup), updating tolerations, nodeSelector, image version and command config:
+Based on the [cluster-autoscaler-run-on-control-plane.yaml](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/examples/cluster-autoscaler-run-on-control-plane.yaml) example, we've created our own `cluster-autoscaler-deployment.yaml` to use preferred [auto-discovery setup](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler/cloudprovider/aws#auto-discovery-setup), updating tolerations, nodeSelector, image version and command config:
 
 
 ```yml
@@ -512,7 +513,7 @@ kubectl -n kube-system apply -f cluster-autoscaler-deployment.yaml
 
 **Note:** Cluster-autoscaler deployment can also be set up using [manual configuration](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler/cloudprovider/aws#manual-configuration)
 
-# Testing
+## Testing
 
 At this point, we should have a cluster-scaler up and running in our Rancher custom cluster. Cluster-scale should manage `K8sWorkerAsg` ASG to scale up and down between 2 and 10 nodes, when one of the following conditions is true:
 

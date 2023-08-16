@@ -1,11 +1,6 @@
 ---
 title: 路由配置
-shortTitle: 路由
-weight: 5
 ---
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 路由（Route）配置是 Alertmanager 自定义资源的一部分，用于控制 Prometheus 触发的告警在到达接收器之前的分组和过滤方式。
 
@@ -15,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 :::note
 
-本节参考假设你已经熟悉 Monitoring 组件的协同工作方式。有关详细信息，请参阅[本节](../../explanations/integrations-in-rancher/monitoring-and-alerting/how-monitoring-works.md)。
+本节参考假设你已经熟悉 Monitoring 组件的协同工作方式。有关详细信息，请参阅[本节](../../integrations-in-rancher/monitoring-and-alerting/how-monitoring-works.md)。
 
 :::
 
@@ -41,40 +36,16 @@ Alerting Drivers 为 Alertmanager 将告警代理到非原生接收器，例如 
 
 
 ### 接收器
-路由需要引用一个已经配置好的[接收器](#接收器配置)。
+路由需要引用一个已经配置好的[接收器](./receivers.md)。
 
 ### 分组
 
-<Tabs>
-<TabItem value="Rancher v2.6.5+">
-
-:::note
-
-从 Rancher 2.6.5 开始，`分组依据`开始接受字符串列表而不是键值对。有关详细信息，请参阅[上游文档](https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#route)。
-
-:::
-
 | 字段 | 默认 | 描述 |
 |-------|--------------|---------|
-| 分组依据 | N/A | 用于分组的标签列表。标签不得重复（在列表内）。如果提供了特殊标签“...”（由所有可能的标签聚合），标签必须在列表中是唯一的元素。 |
+| 分组依据 | N/A | 用于分组的标签列表。所有标签都必须是唯一的。如果提供了特殊标签“...”（由所有可能的标签聚合），标签必须在列表中是唯一的元素。接受字符串列表。有关详细信息，请参阅[上游文档](https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#route)。 |
 | 组等待时长 | 30s | 在发送之前，缓冲同一组告警的等待时间。 |
 | 组间隔 | 5m | 等待多长时间才发送已添加到告警组的告警，其中该告警组的初次通知已被发送。 |
 | 重复间隔 | 4h | 等待多长时间后，才重新发送已发送的告警。 |
-
-</TabItem>
-<TabItem value="Rancher v2.6.5 之前的版本">
-
-| 字段 | 默认 | 描述 |
-|-------|--------------|---------|
-| 分组依据 | N/A | 将传入告警进行分组的标签。例如，`[ group_by: '[' <labelname>, ... ']' ]`。针对 `cluster=A` 和 `alertname=LatencyHigh` 等标签的多个告警可以批处理到一个组中。要按所有可能的标签进行聚合，请使用特殊值 `'...'` 作为唯一标签名称，如 `group_by: ['...']`。以 `...` 进行分组能有效地完全禁用聚合，并按原样传递所有告警。除非你的告警量非常低或者你的上游通知系统能执行分组，否则你不太需要这样做。 |
-| 组等待时长 | 30s | 在发送之前，缓冲同一组告警的等待时间。 |
-| 组间隔 | 5m | 等待多长时间才发送已添加到告警组的告警，其中该告警组的初次通知已被发送。 |
-| 重复间隔 | 4h | 等待多长时间后，才重新发送已发送的告警。 |
-
-</TabItem>
-</Tabs>
-
-
 
 ### 匹配
 

@@ -1,11 +1,10 @@
 ---
 title: Adding Users to Clusters
-weight: 2020
-aliases:
-  - /rancher/v2.0-v2.4/en/tasks/clusters/adding-managing-cluster-members/
-  - /rancher/v2.0-v2.4/en/k8s-in-rancher/cluster-members/
-  - /rancher/v2.0-v2.4/en/cluster-admin/cluster-members
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/manage-clusters/access-clusters/add-users-to-clusters"/>
+</head>
 
 If you want to provide a user with access and permissions to _all_ projects, nodes, and resources within a cluster, assign the user a cluster membership.
 

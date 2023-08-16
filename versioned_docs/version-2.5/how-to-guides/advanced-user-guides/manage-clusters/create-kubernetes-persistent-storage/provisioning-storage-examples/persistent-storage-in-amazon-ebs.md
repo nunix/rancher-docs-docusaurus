@@ -1,9 +1,10 @@
 ---
 title: Creating Persistent Storage in Amazon's EBS
-weight: 3053
-aliases:
-  - /rancher/v2.x/en/cluster-admin/volumes-and-storage/examples/ebs/
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/manage-clusters/provisioning-storage-examples/persistent-storage-in-amazon-ebs"/>
+</head>
 
 This section describes how to set up Amazon's Elastic Block Store in EC2.
 

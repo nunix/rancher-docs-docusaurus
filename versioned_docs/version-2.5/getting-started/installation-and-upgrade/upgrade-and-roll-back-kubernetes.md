@@ -1,9 +1,10 @@
 ---
 title: Upgrading and Rolling Back Kubernetes
-weight: 70
-aliases:
-  - /rancher/v2.x/en/cluster-admin/upgrading-kubernetes/
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/upgrade-and-roll-back-kubernetes"/>
+</head>
 
 Following an upgrade to the latest version of Rancher, downstream Kubernetes clusters can be upgraded to use the latest supported version of Kubernetes.
 
@@ -48,7 +49,7 @@ The restore operation will work on a cluster that is not in a healthy or active 
 
 **Result:** Kubernetes begins upgrading for the cluster.
 
-# Rolling Back
+## Rolling Back
 
 A cluster can be restored to a backup in which the previous Kubernetes version was used. For more information, refer to the following sections:
 

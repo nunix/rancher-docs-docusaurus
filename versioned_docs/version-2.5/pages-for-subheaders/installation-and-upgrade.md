@@ -1,15 +1,11 @@
 ---
 title: Installing/Upgrading Rancher
 description: Learn how to install Rancher in development and production environments. Read about single node and high availability installation
-weight: 3
-aliases:
-  - /rancher/v2.5/en/installation/how-ha-works/
-  - /rancher/v2.x/en/installation/
 ---
 
 This section provides an overview of the architecture options of installing Rancher, describing advantages of each option.
 
-# Terminology
+## Terminology
 
 In this section,
 
@@ -19,7 +15,7 @@ In this section,
 - **RKE2** is a fully conformant Kubernetes distribution that focuses on security and compliance within the U.S. Federal Government sector.
 - **RancherD** was an experimental tool for installing Rancher; a single binary that first launched an RKE2 Kubernetes cluster, then installed the Rancher server Helm chart on the cluster. It was available as part of Rancher v2.5.4 through v2.5.10 but is now deprecated and not available for recent releases.
 
-# Changes to Installation in Rancher v2.5
+## Changes to Installation in Rancher v2.5
 
 In Rancher v2.5, the Rancher management server can be installed on any Kubernetes cluster, including hosted clusters, such as Amazon EKS clusters.
 
@@ -27,7 +23,7 @@ For Docker installations, a local Kubernetes cluster is installed in the single 
 
 The `restrictedAdmin` Helm chart option was added. When this option is set to true, the initial Rancher user has restricted access to the local Kubernetes cluster to prevent privilege escalation. For more information, see the section about the [restricted-admin role.](../how-to-guides/advanced-user-guides/authentication-permissions-and-global-configuration/manage-role-based-access-control-rbac/global-permissions.md#restricted-admin)
 
-# Overview of Installation Options
+## Overview of Installation Options
 
 Rancher can be installed on these main architectures:
 
@@ -44,10 +40,6 @@ RancherD is a single binary that first launches an RKE2 Kubernetes cluster, then
 In both the RancherD install and the Helm CLI install, Rancher is installed as a Helm chart on a Kubernetes cluster.
 
 Configuration and upgrading are also simplified with RancherD. When you upgrade the RancherD binary, both the Kubernetes cluster and the Rancher Helm chart are upgraded.
-
-### Automated Quickstart to Deploy Rancher on Amazon EKS
-
-Rancher and Amazon Web Services collaborated on a quick start guide for deploying Rancher on an EKS Kubernetes cluster following AWS best practices. The deployment guide is [here.](https://aws-quickstart.github.io/quickstart-eks-rancher/)
 
 ### Single-node Kubernetes Install
 
@@ -83,10 +75,11 @@ When the nodes in your Kubernetes cluster are running and fulfill the [node requ
 
 For a longer discussion of Rancher architecture, refer to the [architecture overview,](rancher-manager-architecture.md) [recommendations for production-grade architecture,](../reference-guides/rancher-manager-architecture/architecture-recommendations.md) or our [best practices guide.](../reference-guides/best-practices/rancher-server/tips-for-running-rancher.md)
 
-# Prerequisites
+## Prerequisites
+
 Before installing Rancher, make sure that your nodes fulfill all of the [installation requirements.](installation-requirements.md)
 
-# Architecture Tip
+## Architecture Tip
 
 For the best performance and greater security, we recommend a separate, dedicated Kubernetes cluster for the Rancher management server. Running user workloads on this cluster is not advised. After deploying Rancher, you can [create or import clusters](kubernetes-clusters-in-rancher-setup.md) for running your workloads.
 

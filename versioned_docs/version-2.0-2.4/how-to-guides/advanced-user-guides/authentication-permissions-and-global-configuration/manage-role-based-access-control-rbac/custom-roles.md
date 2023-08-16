@@ -1,12 +1,10 @@
 ---
 title: Custom Roles
-weight: 1128
-aliases:
-  - /rancher/v2.0-v2.4/en/tasks/global-configuration/roles/
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+<head> 
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/authentication-permissions-and-global-configuration/manage-role-based-access-control-rbac/custom-roles"/>
+</head>
 
 Within Rancher, _roles_ determine what actions a user can make within a cluster or project.
 

@@ -1,10 +1,5 @@
 ---
 title: Rancher Deployment Strategies
-weight: 100
-aliases:
-  - /rancher/v2.0-v2.4/en/best-practices/deployment-strategies
-  - /rancher/v2.0-v2.4/en/best-practices/v2.0-v2.4/deployment-strategies
-  - /rancher/v2.x/en/best-practices/v2.0-v2.4/deployment-strategies/
 ---
 
 There are two recommended deployment strategies. Each one has its own pros and cons. Read more about which one would fit best for your use case:
@@ -12,7 +7,7 @@ There are two recommended deployment strategies. Each one has its own pros and c
 * [Hub and Spoke](#hub-and-spoke-strategy)
 * [Regional](#regional-strategy)
 
-# Hub and Spoke Strategy
+## Hub and Spoke Strategy
 ---
 
 In this deployment scenario, there is a single Rancher control plane managing Kubernetes clusters across the globe. The control plane would be run on a high-availability Kubernetes cluster, and there would be impact due to latencies.
@@ -30,7 +25,7 @@ In this deployment scenario, there is a single Rancher control plane managing Ku
 * Subject to network latencies.
 * If the control plane goes out, global provisioning of new services is unavailable until it is restored. However, each Kubernetes cluster can continue to be managed individually.
 
-# Regional Strategy
+## Regional Strategy
 ---
 In the regional deployment model a control plane is deployed in close proximity to the compute nodes.
 

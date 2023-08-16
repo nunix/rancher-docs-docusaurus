@@ -1,12 +1,10 @@
 ---
 title: Node Requirements for Rancher Managed Clusters
-weight: 1
-aliases:
-  - /rancher/v2.x/en/cluster-provisioning/node-requirements/
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-clusters-in-rancher-setup/node-requirements-for-rancher-managed-clusters"/>
+</head>
 
 This page describes the requirements for the Rancher managed Kubernetes clusters where your apps and services will be installed. These downstream clusters should be separate from the three-node cluster running Rancher.
 

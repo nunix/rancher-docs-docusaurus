@@ -1,15 +1,6 @@
 ---
 title: Upgrading to v2.0.7+ — Namespace Migration
-weight: 1040
-aliases:
-  - /rancher/v2.0-v2.4/en/upgrades/upgrades/namespace-migration
-  - /rancher/v2.0-v2.4/en/installation/upgrades-rollbacks/upgrades/namespace-migration
-  - /rancher/v2.0-v2.4/en/installation/install-rancher-on-k8s/upgrades-rollbacks/upgrades/namespace-migration
-  - /rancher/v2.x/en/installation/install-rancher-on-k8s/upgrades/namespace-migration/
 ---
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 >This section applies only to Rancher upgrades from v2.0.6 or earlier to v2.0.7 or later. Upgrades from v2.0.7 to later version are unaffected.
 

@@ -1,18 +1,6 @@
 ---
 title: 4. Install Rancher
-weight: 400
-aliases:
-  - /rancher/v2.0-v2.4/en/installation/air-gap-installation/install-rancher/
-  - /rancher/v2.0-v2.4/en/installation/air-gap-high-availability/config-rancher-system-charts/
-  - /rancher/v2.0-v2.4/en/installation/air-gap-high-availability/config-rancher-for-private-reg/
-  - /rancher/v2.0-v2.4/en/installation/air-gap-single-node/install-rancher
-  - /rancher/v2.0-v2.4/en/installation/air-gap/install-rancher
-  - /rancher/v2.0-v2.4/en/installation/options/air-gap-helm2/install-rancher
-  - /rancher/v2.x/en/installation/resources/advanced/air-gap-helm2/install-rancher/
 ---
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 This section is about how to deploy Rancher for your air gapped environment. An air gapped environment could be where Rancher server will be installed offline, behind a firewall, or behind a proxy. There are _tabs_ for either a high availability (recommended) or a Docker installation.
 
@@ -116,7 +104,7 @@ By default, Rancher generates a CA and uses cert-manager to issue the certificat
 
 1. Download the required CRD file for cert-manager
    ```plain
-   curl -L -o cert-manager/cert-manager-crd.yaml https://raw.githubusercontent.com/jetstack/cert-manager/release-0.14/deploy/manifests/00-crds.yaml
+   curl -L -o cert-manager-crd.yaml https://raw.githubusercontent.com/jetstack/cert-manager/release-0.14/deploy/manifests/00-crds.yaml
    ```
 1. Render the Rancher template, declaring your chosen options. Use the reference table below to replace each placeholder. Rancher needs to be configured to use the private registry in order to provision any Rancher launched Kubernetes clusters or Rancher tools.
 

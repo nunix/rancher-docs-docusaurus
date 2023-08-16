@@ -1,10 +1,10 @@
 ---
 title: Background Information on HPAs
-weight: 3027
-aliases:
-  - /rancher/v2.5/en/k8s-in-rancher/horizontal-pod-autoscaler/hpa-background
-  - /rancher/v2.x/en/k8s-in-rancher/horitzontal-pod-autoscaler/hpa-background/
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-resources-setup/horizontal-pod-autoscaler/about-hpas"/>
+</head>
 
 The [Horizontal Pod Autoscaler](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) (HPA) is a Kubernetes feature that allows you to configure your cluster to automatically scale the services it's running up or down. This section provides explanation on how HPA works with Kubernetes.
 
@@ -40,4 +40,4 @@ For full documentation on HPA, refer to the [Kubernetes Documentation](https://k
 
 HPA is an API resource in the Kubernetes `autoscaling` API group. The current stable version is `autoscaling/v1`, which only includes support for CPU autoscaling. To get additional support for scaling based on memory and custom metrics, use the beta version instead: `autoscaling/v2beta1`.
 
-For more information about the HPA API object, see the [HPA GitHub Readme](https://git.k8s.io/community/contributors/design-proposals/autoscaling/horizontal-pod-autoscaler.md#horizontalpodautoscaler-object).
+For more information about the HPA API object, see the [HPA GitHub Readme](https://github.com/kubernetes/design-proposals-archive/blob/main/autoscaling/horizontal-pod-autoscaler.md#horizontalpodautoscaler-object).

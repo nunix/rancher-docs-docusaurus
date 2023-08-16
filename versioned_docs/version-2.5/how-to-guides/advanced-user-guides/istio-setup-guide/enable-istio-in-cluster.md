@@ -1,10 +1,5 @@
 ---
 title: 1. Enable Istio in the Cluster
-weight: 1
-aliases:
-  - /rancher/v2.5/en/istio/setup/enable-istio-in-cluster
-  - /rancher/v2.5/en/istio/v2.5/setup/enable-istio-in-cluster
-  - /rancher/v2.x/en/istio/v2.5/setup/enable-istio-in-cluster/
 ---
 
 >**Prerequisites:**
@@ -24,6 +19,6 @@ aliases:
 
 **Result:** Istio is installed at the cluster level.
 
-# Additional Config Options
+## Additional Config Options
 
 For more information on configuring Istio, refer to the [configuration reference.](../../../pages-for-subheaders/configuration-options.md)

@@ -1,7 +1,10 @@
 ---
-title: 'Set up Infrastructure for a High Availability K3s Kubernetes Cluster'
-weight: 1
+title: Set up Infrastructure for a High Availability K3s Kubernetes Cluster
 ---
+
+<head> 
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/infrastructure-setup/ha-k3s-kubernetes-cluster"/>
+</head>
 
 This tutorial is intended to help you provision the underlying infrastructure for a Rancher management server.
 

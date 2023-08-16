@@ -1,8 +1,5 @@
 ---
 title: "5. Schedule Your Services"
-weight: 500
-aliases:
-  - /rancher/v2.x/en/v1.6-migration/schedule-workloads/
 ---
 
 In v1.6, objects called _services_ were used to schedule containers to your cluster hosts. Services included the Docker image for an application, along with configuration settings for a desired state.
@@ -194,7 +191,7 @@ For more information, see the Kubernetes documentation on [taints and toleration
 
 ### Scheduling Global Services
 
-Rancher v1.6 included the ability to deploy [global services]({{<baseurl>}}/rancher/v1.6/en/cattle/scheduling/#global-service), which are services that deploy duplicate containers to each host in the environment (i.e.,  nodes in your cluster using Rancher v2.x terms). If a service has the `io.rancher.scheduler.global: 'true'` label declared, then Rancher v1.6 schedules a service container on each host in the environment.
+Rancher v1.6 included the ability to deploy [global services](https://rancher.com/docs/rancher/v1.6/en/cattle/scheduling/#global-service), which are services that deploy duplicate containers to each host in the environment (i.e.,  nodes in your cluster using Rancher v2.x terms). If a service has the `io.rancher.scheduler.global: 'true'` label declared, then Rancher v1.6 schedules a service container on each host in the environment.
 
 <figcaption><code>output.txt</code> Global Service Label</figcaption>
 
@@ -212,7 +209,7 @@ To create a daemonset while configuring a workload, choose **Run one pod on each
 
 While creating a service in the Rancher v1.6 UI, you could schedule its containers to hosts based on hardware requirements that you choose. The containers are then scheduled to hosts based on which ones have bandwidth, memory, and CPU capacity.
 
-In Rancher v2.x, you can still specify the resources required by your pods. However, these options are unavailable in the UI. Instead, you must edit your workload's manifest file to declare these resource constraints.  
+In Rancher v2.x, you can still specify the resources required by your pods. However, these options are unavailable in the UI. Instead, you must edit your workload's manifest file to declare these resource constraints.
 
 To declare resource constraints, edit your migrated workloads, editing the **Security & Host** sections.
 

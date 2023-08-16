@@ -1,14 +1,11 @@
 ---
 title: Installing/Upgrading Rancher
 description: Learn how to install Rancher in development and production environments. Read about single node and high availability installation
-weight: 3
-aliases:
-  - /rancher/v2.0-v2.4/en/installation/how-ha-works/
 ---
 
 This section provides an overview of the architecture options of installing Rancher, describing advantages of each option.
 
-# Terminology
+## Terminology
 
 In this section,
 
@@ -16,7 +13,7 @@ In this section,
 - **RKE (Rancher Kubernetes Engine)** is a certified Kubernetes distribution and CLI/library which creates and manages a Kubernetes cluster.
 - **K3s (Lightweight Kubernetes)** is also a fully compliant Kubernetes distribution. It is newer than RKE, easier to use, and more lightweight, with a binary size of less than 100 MB. As of Rancher v2.4, Rancher can be installed on a K3s cluster.
 
-# Overview of Installation Options
+## Overview of Installation Options
 
 Rancher can be installed on these main architectures:
 
@@ -63,10 +60,11 @@ When the nodes in your Kubernetes cluster are running and fulfill the [node requ
 
 For a longer discussion of Rancher architecture, refer to the [architecture overview,](rancher-manager-architecture.md) [recommendations for production-grade architecture,](../reference-guides/rancher-manager-architecture/architecture-recommendations.md) or our [best practices guide.](../reference-guides/best-practices/deployment-types.md)
 
-# Prerequisites
+## Prerequisites
+
 Before installing Rancher, make sure that your nodes fulfill all of the [installation requirements.](installation-requirements.md)
 
-# Architecture Tip
+## Architecture Tip
 
 For the best performance and greater security, we recommend a separate, dedicated Kubernetes cluster for the Rancher management server. Running user workloads on this cluster is not advised. After deploying Rancher, you can [create or import clusters](kubernetes-clusters-in-rancher-setup.md) for running your workloads.
 

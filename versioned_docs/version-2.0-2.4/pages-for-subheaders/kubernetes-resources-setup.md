@@ -1,10 +1,5 @@
 ---
 title: Kubernetes Resources
-weight: 19
-aliases:
-  - /rancher/v2.0-v2.4/en/concepts/
-  - /rancher/v2.0-v2.4/en/tasks/
-  - /rancher/v2.0-v2.4/en/concepts/resources/
 ---
 
 ## Workloads
@@ -54,7 +49,7 @@ For more information, see [Service Discovery](../how-to-guides/new-user-guides/k
 
 ## Pipelines
 
-After your project has been [configured to a version control provider](../how-to-guides/advanced-user-guides/manage-projects/ci-cd-pipelines.md#1-configure-version-control-providers), you can add the repositories and start configuring a pipeline for each repository.
+After your project has been [configured to a version control provider](../pages-for-subheaders/pipelines.md#1-configure-version-control-providers), you can add the repositories and start configuring a pipeline for each repository.
 
 For more information, see [Pipelines](./pipelines.md).
 

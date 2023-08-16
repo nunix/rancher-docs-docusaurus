@@ -1,11 +1,5 @@
 ---
 title: Kubernetes Resources
-weight: 18
-aliases:
-  - /rancher/v2.5/en/concepts/
-  - /rancher/v2.5/en/tasks/
-  - /rancher/v2.5/en/concepts/resources/
-  - /rancher/v2.x/en/k8s-in-rancher/
 ---
 
 > The <b>Cluster Explorer</b> is a new feature in Rancher v2.5 that allows you to view and manipulate all of the custom resources and CRDs in a Kubernetes cluster from the Rancher UI. This section will be updated to reflect the way that Kubernetes resources are handled in Rancher v2.5.
@@ -53,11 +47,6 @@ After you expose your cluster to external requests using a load balancer and/or 
 
 For more information, see [Service Discovery](../how-to-guides/new-user-guides/kubernetes-resources-setup/create-services.md).
 
-## Pipelines
-
-After your project has been [configured to a version control provider](../how-to-guides/advanced-user-guides/manage-projects/ci-cd-pipelines.md#1-configure-version-control-providers), you can add the repositories and start configuring a pipeline for each repository.
-
-For more information, see [Pipelines](./pipelines.md).
 
 ## Applications
 

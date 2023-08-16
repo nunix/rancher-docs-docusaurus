@@ -1,12 +1,6 @@
 ---
 title: Pipelines
-weight: 11
-aliases:
-  - /rancher/v2.0-v2.4/en/k8s-in-rancher/pipelines
 ---
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 Rancher's pipeline provides a simple CI/CD experience. Use it to automatically checkout code, run builds or scripts, publish Docker images or catalog applications, and deploy the updated software to users.
 

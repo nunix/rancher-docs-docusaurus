@@ -1,15 +1,10 @@
 ---
 title: '2. Collect and Publish Images to your Private Registry'
-weight: 200
-aliases:
-  - /rancher/v2.0-v2.4/en/installation/air-gap-high-availability/prepare-private-registry/
-  - /rancher/v2.0-v2.4/en/installation/air-gap-single-node/prepare-private-registry/
-  - /rancher/v2.0-v2.4/en/installation/air-gap-single-node/config-rancher-for-private-reg/
-  - /rancher/v2.0-v2.4/en/installation/air-gap-high-availability/config-rancher-for-private-reg/
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/other-installation-methods/air-gapped-helm-cli-install/publish-images"/>
+</head>
 
 This section describes how to set up your private registry so that when you install Rancher, Rancher will pull all the required images from this registry.
 
@@ -118,7 +113,7 @@ _Available as of v2.3.0_
 
 For Rancher servers that will provision Linux and Windows clusters, there are distinctive steps to populate your private registry for the Windows images and the Linux images. Since a Windows cluster is a mix of Linux and Windows nodes, the Linux images pushed into the private registry are manifests.
 
-# Windows Steps
+## Windows Steps
 
 The Windows images need to be collected and pushed from a Windows server workstation.
 
@@ -197,7 +192,7 @@ The `rancher-windows-images.txt` is expected to be on the workstation in the sam
    ./rancher-load-images.ps1 --registry <REGISTRY.YOURDOMAIN.COM:PORT>
    ```
 
-# Linux Steps
+## Linux Steps
 
 The Linux images needs to be collected and pushed from a Linux host, but _must be done after_ populating the Windows images into the private registry. These step are different from the Linux only steps as the Linux images that are pushed will actually manifests that support Windows and Linux images.
 

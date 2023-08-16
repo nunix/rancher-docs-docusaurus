@@ -1,12 +1,5 @@
 ---
 title: Prometheus Expressions
-weight: 4
-aliases:
-  - /rancher/v2.0-v2.4/en/project-admin/tools/monitoring/expression
-  - /rancher/v2.0-v2.4/en/cluster-admin/tools/monitoring/expression
-  - /rancher/v2.0-v2.4/en/monitoring-alerting/legacy/monitoring/cluster-monitoring/expression
-  - /rancher/v2.0-v2.4/en/monitoring-alerting/v2.0.x-v2.4.x/cluster-monitoring/expression
-  - /rancher/v2.x/en/monitoring-alerting/v2.0.x-v2.4.x/cluster-monitoring/expression/
 ---
 
 The PromQL expressions in this doc can be used to configure [alerts.](../../../pages-for-subheaders/cluster-alerts.md)
@@ -15,8 +8,7 @@ The PromQL expressions in this doc can be used to configure [alerts.](../../../p
 
 For more information about querying Prometheus, refer to the official [Prometheus documentation.](https://prometheus.io/docs/prometheus/latest/querying/basics/)
 
-
-# Cluster Metrics
+## Cluster Metrics
 
 ### Cluster CPU Utilization
 
@@ -67,7 +59,7 @@ For more information about querying Prometheus, refer to the official [Prometheu
 | Detail | <table><tr><td>receive</td><td><code>sum(rate(node_network_receive_bytes_total{device!~"lo &#124; veth.&ast; &#124; docker.&ast; &#124; flannel.&ast; &#124; cali.&ast; &#124; cbr.&ast;"}[5m])) by (instance)</code></td></tr><tr><td>transmit</td><td><code>sum(rate(node_network_transmit_bytes_total{device!~"lo &#124; veth.&ast; &#124; docker.&ast; &#124; flannel.&ast; &#124; cali.&ast; &#124; cbr.&ast;"}[5m])) by (instance)</code></td></tr></table> |
 | Summary | <table><tr><td>receive</td><td><code>sum(rate(node_network_receive_bytes_total{device!~"lo &#124; veth.&ast; &#124; docker.&ast; &#124; flannel.&ast; &#124; cali.&ast; &#124; cbr.&ast;"}[5m]))</code></td></tr><tr><td>transmit</td><td><code>sum(rate(node_network_transmit_bytes_total{device!~"lo &#124; veth.&ast; &#124; docker.&ast; &#124; flannel.&ast; &#124; cali.&ast; &#124; cbr.&ast;"}[5m]))</code></td></tr></table> |
 
-# Node Metrics
+## Node Metrics
 
 ### Node CPU Utilization
 
@@ -118,7 +110,7 @@ For more information about querying Prometheus, refer to the official [Prometheu
 | Detail | <table><tr><td>receive</td><td><code>sum(rate(node_network_receive_bytes_total{device!~"lo &#124; veth.&ast; &#124; docker.&ast; &#124; flannel.&ast; &#124; cali.&ast; &#124; cbr.&ast;",instance=~"$instance"}[5m])) by (device)</code></td></tr><tr><td>transmit</td><td><code>sum(rate(node_network_transmit_bytes_total{device!~"lo &#124; veth.&ast; &#124; docker.&ast; &#124; flannel.&ast; &#124; cali.&ast; &#124; cbr.&ast;",instance=~"$instance"}[5m])) by (device)</code></td></tr></table> |
 | Summary | <table><tr><td>receive</td><td><code>sum(rate(node_network_receive_bytes_total{device!~"lo &#124; veth.&ast; &#124; docker.&ast; &#124; flannel.&ast; &#124; cali.&ast; &#124; cbr.&ast;",instance=~"$instance"}[5m]))</code></td></tr><tr><td>transmit</td><td><code>sum(rate(node_network_transmit_bytes_total{device!~"lo &#124; veth.&ast; &#124; docker.&ast; &#124; flannel.&ast; &#124; cali.&ast; &#124; cbr.&ast;",instance=~"$instance"}[5m]))</code></td></tr></table> |
 
-# Etcd Metrics
+## Etcd Metrics
 
 ### Etcd Has a Leader
 
@@ -188,7 +180,7 @@ For more information about querying Prometheus, refer to the official [Prometheu
 | Detail | <table><tr><td>wal</td><td>`histogram_quantile(0.99, sum(rate(etcd_disk_wal_fsync_duration_seconds_bucket[5m])) by (instance, le))`</td></tr><tr><td>db</td><td>`histogram_quantile(0.99, sum(rate(etcd_disk_backend_commit_duration_seconds_bucket[5m])) by (instance, le))`</td></tr></table> |
 | Summary | <table><tr><td>wal</td><td>`sum(histogram_quantile(0.99, sum(rate(etcd_disk_wal_fsync_duration_seconds_bucket[5m])) by (instance, le)))`</td></tr><tr><td>db</td><td>`sum(histogram_quantile(0.99, sum(rate(etcd_disk_backend_commit_duration_seconds_bucket[5m])) by (instance, le)))`</td></tr></table> |
 
-# Kubernetes Components Metrics
+## Kubernetes Components Metrics
 
 ### API Server Request Latency
 
@@ -246,8 +238,7 @@ For more information about querying Prometheus, refer to the official [Prometheu
 | Detail | `topk(10, histogram_quantile(0.95,sum by (le, host, path)(rate(nginx_ingress_controller_request_duration_seconds_bucket{host!="_"}[5m]))))` |
 | Summary | `topk(10, histogram_quantile(0.95,sum by (le, host)(rate(nginx_ingress_controller_request_duration_seconds_bucket{host!="_"}[5m]))))` |
 
-# Rancher Logging Metrics
-
+## Rancher Logging Metrics
 
 ### Fluentd Buffer Queue Rate
 
@@ -277,7 +268,7 @@ For more information about querying Prometheus, refer to the official [Prometheu
 | Detail | `sum(rate(fluentd_output_status_num_records_total[5m])) by (instance)` |
 | Summary | `sum(rate(fluentd_output_status_num_records_total[5m]))` |
 
-# Workload Metrics
+## Workload Metrics
 
 ### Workload CPU Utilization
 
@@ -314,7 +305,7 @@ For more information about querying Prometheus, refer to the official [Prometheu
 | Detail | <table><tr><td>read</td><td>`sum(rate(container_fs_reads_bytes_total{namespace="$namespace",pod_name=~"$podName",container_name!=""}[5m])) by (pod_name)`</td></tr><tr><td>write</td><td>`sum(rate(container_fs_writes_bytes_total{namespace="$namespace",pod_name=~"$podName",container_name!=""}[5m])) by (pod_name)`</td></tr></table> |
 | Summary | <table><tr><td>read</td><td>`sum(rate(container_fs_reads_bytes_total{namespace="$namespace",pod_name=~"$podName",container_name!=""}[5m]))`</td></tr><tr><td>write</td><td>`sum(rate(container_fs_writes_bytes_total{namespace="$namespace",pod_name=~"$podName",container_name!=""}[5m]))`</td></tr></table> |
 
-# Pod Metrics
+## Pod Metrics
 
 ### Pod CPU Utilization
 
@@ -351,7 +342,7 @@ For more information about querying Prometheus, refer to the official [Prometheu
 | Detail | <table><tr><td>read</td><td>`sum(rate(container_fs_reads_bytes_total{namespace="$namespace",pod_name="$podName",container_name!=""}[5m])) by (container_name)`</td></tr><tr><td>write</td><td>`sum(rate(container_fs_writes_bytes_total{namespace="$namespace",pod_name="$podName",container_name!=""}[5m])) by (container_name)`</td></tr></table> |
 | Summary | <table><tr><td>read</td><td>`sum(rate(container_fs_reads_bytes_total{namespace="$namespace",pod_name="$podName",container_name!=""}[5m]))`</td></tr><tr><td>write</td><td>`sum(rate(container_fs_writes_bytes_total{namespace="$namespace",pod_name="$podName",container_name!=""}[5m]))`</td></tr></table> |
 
-# Container Metrics
+## Container Metrics
 
 ### Container CPU Utilization
 

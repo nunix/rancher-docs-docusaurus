@@ -1,14 +1,10 @@
 ---
 title: Registering Existing Clusters
-weight: 6
-aliases:
-  - /rancher/v2.5/en/cluster-provisioning/imported-clusters
-  - /rancher/v2.x/en/cluster-provisioning/imported-clusters/
-  - /rancher/v2.x/en/cluster-provisioning/registered-clusters/
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-clusters-in-rancher-setup/register-existing-clusters"/>
+</head>
 
 The cluster registration feature replaced the feature to import clusters.
 
@@ -48,6 +44,10 @@ If you are registering a K3s cluster, make sure the `cluster.yml` is readable. I
 
 EKS clusters must have at least one managed node group to be imported into Rancher or provisioned from Rancher successfully.
 
+### GKE Clusters
+
+GKE clusters must be running in Standard mode. GKE Autopilot clusters aren't supported. See [Compare GKE Autopilot and Standard](https://cloud.google.com/kubernetes-engine/docs/resources/autopilot-standard-feature-comparison) for more information about the difference between GKE Autopilot mode and Standard mode.
+
 </TabItem>
 <TabItem value="Rancher before v2.5.9">
 
@@ -73,6 +73,9 @@ If you are registering a K3s cluster, make sure the `cluster.yml` is readable. I
 
 EKS clusters must have at least one managed node group to be imported into Rancher or provisioned from Rancher successfully.
 
+### GKE Clusters
+
+GKE clusters must be running in Standard mode. GKE Autopilot clusters aren't supported. See [Compare GKE Autopilot and Standard](https://cloud.google.com/kubernetes-engine/docs/resources/autopilot-standard-feature-comparison) for more information about the difference between GKE modes.
 </TabItem>
 </Tabs>
 
@@ -169,7 +172,6 @@ After registering a cluster, the cluster owner can:
 - Enable [monitoring, alerts and notifiers](../../../pages-for-subheaders/monitoring-and-alerting.md)
 - Enable [logging](../../../pages-for-subheaders/logging.md)
 - Enable [Istio](../../../pages-for-subheaders/istio.md)
-- Use [pipelines](../../advanced-user-guides/manage-projects/ci-cd-pipelines.md)
 - Manage projects and workloads
 
 <a id="2-5-8-additional-features-for-registered-k3s-clusters"></a>
@@ -209,7 +211,6 @@ After registering a cluster, the cluster owner can:
 - Enable [monitoring, alerts and notifiers](../../../pages-for-subheaders/monitoring-and-alerting.md)
 - Enable [logging](../../../pages-for-subheaders/logging.md)
 - Enable [Istio](../../../pages-for-subheaders/istio.md)
-- Use [pipelines](../../advanced-user-guides/manage-projects/ci-cd-pipelines.md)
 - Manage projects and workloads
 
 <a id="before-2-5-8-additional-features-for-registered-k3s-clusters"></a>

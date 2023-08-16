@@ -1,13 +1,11 @@
 ---
 title: Projects and Kubernetes Namespaces with Rancher
 description: Rancher Projects ease the administrative burden of your cluster and support multi-tenancy. Learn to create projects and divide projects into Kubernetes namespaces
-weight: 2032
-aliases:
-  - /rancher/v2.0-v2.4/en/concepts/projects/
-  - /rancher/v2.0-v2.4/en/tasks/projects/
-  - /rancher/v2.0-v2.4/en/tasks/projects/create-project/
-  - /rancher/v2.0-v2.4/en/tasks/projects/create-project/
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/manage-clusters/projects-and-namespaces"/>
+</head>
 
 A namespace is a Kubernetes concept that allows a virtual cluster within a cluster, which is useful for dividing the cluster into separate "virtual clusters" that each have their own access control and resource quotas.
 
@@ -74,7 +72,7 @@ You can use projects to perform actions such as:
 
 When you create a cluster, two projects are automatically created within it:
 
-- [Default Project](#the-cluster-s-default-project)
+- [Default Project](#the-clusters-default-project)
 - [System Project](#the-system-project)
 
 ### The Cluster's Default Project

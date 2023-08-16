@@ -1,9 +1,10 @@
 ---
 title: Rancher Agents
-weight: 2400
-aliases:
-  - /rancher/v2.x/en/cluster-provisioning/rke-clusters/rancher-agents/
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/launch-kubernetes-with-rancher/about-rancher-agents"/>
+</head>
 
 There are two different agent resources deployed on Rancher managed clusters:
 

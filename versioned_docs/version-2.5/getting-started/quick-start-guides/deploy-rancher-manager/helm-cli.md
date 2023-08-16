@@ -1,9 +1,7 @@
 ---
 title: Manual Quick Start
-weight: 300
-aliases:
-  - /rancher/v2.x/en/quick-start-guide/deployment/quickstart-manual-setup/
 ---
+
 Howdy Partner! This tutorial walks you through:
 
 - Installation of Rancher 2.x
@@ -12,7 +10,6 @@ Howdy Partner! This tutorial walks you through:
 
 >**Note:** The intent of these guides is to quickly launch a sandbox that you can use to evaluate Rancher. These guides are not intended for production environments. For comprehensive setup instructions, see [Installation](../../../pages-for-subheaders/installation-and-upgrade.md).
 
-<br/>
 ### 1. Provision a Linux Host
 
  Begin creation of a custom cluster by provisioning a Linux host. Your host can be:

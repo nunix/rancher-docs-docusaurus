@@ -1,8 +1,11 @@
 ---
 title: Rancher Azure Quick Start Guide
 description: Read this step by step Rancher Azure guide to quickly deploy a Rancher Server with a single node cluster attached.
-weight: 100
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/quick-start-guides/deploy-rancher-manager/azure"/>
+</head>
 
 The following steps will quickly deploy a Rancher server on Azure in a single-node RKE Kubernetes cluster, with a single-node downstream Kubernetes cluster attached.
 
@@ -24,7 +27,7 @@ The following steps will quickly deploy a Rancher server on Azure in a single-no
 
 1. Clone [Rancher Quickstart](https://github.com/rancher/quickstart) to a folder using `git clone https://github.com/rancher/quickstart`.
 
-1. Go into the Azure folder containing the terraform files by executing `cd quickstart/azure`.
+1. Go into the Azure folder containing the Terraform files by executing `cd quickstart/azure`.
 
 1. Rename the `terraform.tfvars.example` file to `terraform.tfvars`.
 

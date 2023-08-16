@@ -1,9 +1,10 @@
 ---
 title: Template Enforcement
-weight: 32
-aliases:
-  - /rancher/v2.x/en/admin-settings/rke-templates/enforcement/
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/authentication-permissions-and-global-configuration/about-rke1-templates/enforce-templates"/>
+</head>
 
 This section describes how template administrators can enforce templates in Rancher, restricting the ability of users to create clusters without a template.
 

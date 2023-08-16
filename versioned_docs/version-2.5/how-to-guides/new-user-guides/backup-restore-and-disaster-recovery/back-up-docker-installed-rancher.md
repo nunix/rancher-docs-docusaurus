@@ -1,16 +1,10 @@
 ---
 title: Backing up Rancher Installed with Docker
-shortTitle: Backups
-weight: 3
-aliases:
-  - /rancher/v2.5/en/installation/after-installation/single-node-backup-and-restoration/
-  - /rancher/v2.5/en/installation/after-installation/single-node-backup-and-restoration/
-  - /rancher/v2.5/en/backups/backups/single-node-backups/
-  - /rancher/v2.5/en/backups/legacy/backup/single-node-backups/
-  - /rancher/v2.5/en/backups/v2.5/docker-installs/docker-backups/
-  - /rancher/v2.x/en/backups/v2.5/docker-installs/docker-backups/
 ---
 
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/backup-restore-and-disaster-recovery/back-up-docker-installed-rancher"/>
+</head>
 
 After completing your Docker installation of Rancher, we recommend creating backups of it on a regular basis. Having a recent backup will let you recover quickly from an unexpected disaster.
 

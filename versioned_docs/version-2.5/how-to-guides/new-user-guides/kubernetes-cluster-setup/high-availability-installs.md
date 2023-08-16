@@ -1,9 +1,10 @@
 ---
 title: About High-availability Installations
-weight: 1
-aliases:
-  - /rancher/v2.x/en/installation/resources/k8s-tutorials/how-ha-works/
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-cluster-setup/high-availability-installs"/>
+</head>
 
 We recommend using Helm, a Kubernetes package manager, to install Rancher on a dedicated Kubernetes cluster. This is called a high-availability Kubernetes installation because increased availability is achieved by running Rancher on multiple nodes.
 

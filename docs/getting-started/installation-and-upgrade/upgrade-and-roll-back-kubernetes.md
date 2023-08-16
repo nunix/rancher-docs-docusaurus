@@ -1,7 +1,10 @@
 ---
 title: Upgrading and Rolling Back Kubernetes
-weight: 70
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/upgrade-and-roll-back-kubernetes"/>
+</head>
 
 Following an upgrade to the latest version of Rancher, downstream Kubernetes clusters can be upgraded to use the latest supported version of Kubernetes.
 
@@ -33,7 +36,8 @@ The restore operation will work on a cluster that is not in a healthy or active 
 
 :::note Prerequisites:
 
-- The options below are available only for [Rancher-launched RKE Kubernetes clusters](../../pages-for-subheaders/launch-kubernetes-with-rancher.md) and [Registered K3s Kubernetes clusters.](../../how-to-guides/new-user-guides/kubernetes-clusters-in-rancher-setup/register-existing-clusters.md#additional-features-for-registered-k3s-clusters)
+- The options below are available for [Rancher-launched Kubernetes clusters](../../pages-for-subheaders/launch-kubernetes-with-rancher.md) and [Registered K3s Kubernetes clusters](../../how-to-guides/new-user-guides/kubernetes-clusters-in-rancher-setup/register-existing-clusters.md#additional-features-for-registered-rke2-and-k3s-clusters).
+- The following options also apply to imported RKE2 clusters that you have registered. If you import a cluster from an external cloud platform but don't register it, you won't be able to upgrade the Kubernetes version from Rancher.
 - Before upgrading Kubernetes, [back up your cluster.](../../pages-for-subheaders/backup-restore-and-disaster-recovery.md)
 
 :::
@@ -83,7 +87,7 @@ To enable draining each node during a cluster upgrade,
 1. On the **Clusters** page, go to the cluster you want to enable node draining and click **⋮ > Edit Config**.
 1. Click **⋮ > Edit**.
 1. In the **Upgrade Strategy** tab, go to the **Drain nodes** field and click **Yes**. Node draining is configured separately for control plane and worker nodes.
-1. Configure the options for how pods are deleted. For more information about each option, refer to [this section.](../../how-to-guides/advanced-user-guides/manage-clusters/nodes-and-node-pools.md#aggressive-and-safe-draining-options)
+1. Configure the options for how pods are deleted. For more information about each option, refer to [this section.](../../how-to-guides/new-user-guides/manage-clusters/nodes-and-node-pools.md#aggressive-and-safe-draining-options)
 1. Optionally, configure a grace period. The grace period is the timeout given to each pod for cleaning things up, so they will have chance to exit gracefully. Pods might need to finish any outstanding requests, roll back transactions or save state to some external storage. If this value is negative, the default value specified in the pod will be used.
 1. Optionally, configure a timeout, which is the amount of time the drain should continue to wait before giving up.
 1. Click **Save**.
@@ -92,7 +96,7 @@ To enable draining each node during a cluster upgrade,
 
 :::note
 
-As of Rancher v2.4.0, there is a [known issue](https://github.com/rancher/rancher/issues/25478) in which the Rancher UI doesn't show state of etcd and controlplane as drained, even though they are being drained.
+There is a [known issue](https://github.com/rancher/rancher/issues/25478) in which the Rancher UI doesn't show state of etcd and controlplane as drained, even though they are being drained.
 
 :::
 

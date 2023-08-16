@@ -1,9 +1,10 @@
 ---
 title: RKE Templates and Infrastructure
-weight: 90
-aliases:
-  - /rancher/v2.x/en/admin-settings/rke-templates/rke-templates-and-hardware/
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/authentication-permissions-and-global-configuration/about-rke1-templates/infrastructure"/>
+</head>
 
 In Rancher, RKE templates are used to provision Kubernetes and define Rancher settings, while node templates are used to provision nodes.
 

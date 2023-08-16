@@ -1,11 +1,6 @@
 ---
 title: vSphere Node Template Configuration in Rancher before v2.0.4
-shortTitle: Before v2.0.4
-weight: 5
-aliases:
-  - /rancher/v2.x/en/cluster-provisioning/rke-clusters/node-pools/vsphere/vsphere-node-template-config/prior-to-2.0.4/
 ---
-
 
 ## Account Access
 In the **Account Access** section, enter the vCenter FQDN or IP address and the credentials for the vSphere user account.
@@ -44,9 +39,9 @@ Ensure that the OS ISO URL contains the URL of the VMware ISO release for Ranche
 | CPUs                     |   *      | Number of vCPUS to assign to VMs. |
 | Memory                   |   *      | Amount of memory to assign to VMs.  |
 | Disk                     |   *      | Size of the disk (in MB) to attach to the VMs. |
-| Cloud Init               |          | URL of a [RancherOS cloud-config]({{<baseurl>}}/os/v1.x/en/configuration/) file to provision VMs with. This file allows further customization of the RancherOS operating system, such as network configuration, DNS servers, or system daemons.|
+| Cloud Init               |          | URL of a [RancherOS cloud-config](https://rancher.com/docs/os/v1.x/en/configuration/) file to provision VMs with. This file allows further customization of the RancherOS operating system, such as network configuration, DNS servers, or system daemons.|
 | OS ISO URL               |   *      | URL of a RancherOS vSphere ISO file to boot the VMs from. You can find URLs for specific versions in the [Rancher OS GitHub Repo](https://github.com/rancher/os). |
-| Configuration Parameters |          | Additional configuration parameters for the VMs. These correspond to the [Advanced Settings](https://kb.vmware.com/s/article/1016098) in the vSphere console. Example use cases include providing RancherOS [guestinfo]({{<baseurl>}}/os/v1.x/en/installation/cloud/vmware-esxi/#vmware-guestinfo) parameters or enabling disk UUIDs for the VMs (`disk.EnableUUID=TRUE`). |
+| Configuration Parameters |          | Additional configuration parameters for the VMs. These correspond to the [Advanced Settings](https://kb.vmware.com/s/article/1016098) in the vSphere console. Example use cases include providing RancherOS [guestinfo](https://rancher.com/docs/os/v1.x/en/installation/cloud/vmware-esxi/#vmware-guestinfo) parameters or enabling disk UUIDs for the VMs (`disk.EnableUUID=TRUE`). |
 
 ## Disk UUIDs
 

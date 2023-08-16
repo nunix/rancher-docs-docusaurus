@@ -1,11 +1,10 @@
 ---
 title: Creating an Azure Cluster
-shortTitle: Azure
-weight: 2220
-aliases:
-  - /rancher/v2.5/en/tasks/clusters/creating-a-cluster/create-cluster-azure/
-  - /rancher/v2.x/en/cluster-provisioning/rke-clusters/node-pools/azure/
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/launch-kubernetes-with-rancher/use-new-nodes-in-an-infra-provider/create-an-azure-cluster"/>
+</head>
 
 In this section, you'll learn how to install an [RKE](https://rancher.com/docs/rke/latest/en/) Kubernetes cluster in Azure through Rancher.
 
@@ -27,7 +26,7 @@ For more information on configuring Azure node templates, refer to the [Azure no
 - [Preparation in Azure](#preparation-in-azure)
 - [Creating an Azure Cluster](#creating-an-azure-cluster)
 
-# Preparation in Azure
+## Preparation in Azure
 
 Before creating a node template in Rancher using a cloud infrastructure such as Azure, we must configure Rancher to allow the manipulation of resources in an Azure subscription.
 
@@ -44,7 +43,7 @@ az ad sp create-for-rbac \
 
 The creation of this service principal returns three pieces of identification information, *The application ID, also called the client ID*, *The client secret*, and *The tenant ID*. This information will be used when you create a node template for Azure.
 
-# Creating an Azure Cluster
+## Creating an Azure Cluster
 
 
 1. [Create your cloud credentials](#1-create-your-cloud-credentials)
@@ -99,5 +98,5 @@ You can access your cluster after its state is updated to **Active.**
 
 After creating your cluster, you can access it through the Rancher UI. As a best practice, we recommend setting up these alternate ways of accessing your cluster:
 
-- **Access your cluster with the kubectl CLI:** Follow [these steps](../../../../advanced-user-guides/manage-clusters/access-clusters/use-kubectl-and-kubeconfig.md#accessing-clusters-with-kubectl-on-your-workstation) to access clusters with kubectl on your workstation. In this case, you will be authenticated through the Rancher server’s authentication proxy, then Rancher will connect you to the downstream cluster. This method lets you manage the cluster without the Rancher UI.
+- **Access your cluster with the kubectl CLI:** Follow [these steps](../../../../advanced-user-guides/manage-clusters/access-clusters/use-kubectl-and-kubeconfig.md#accessing-clusters-with-kubectl-from-your-workstation) to access clusters with kubectl on your workstation. In this case, you will be authenticated through the Rancher server’s authentication proxy, then Rancher will connect you to the downstream cluster. This method lets you manage the cluster without the Rancher UI.
 - **Access your cluster with the kubectl CLI, using the authorized cluster endpoint:** Follow [these steps](../../../../advanced-user-guides/manage-clusters/access-clusters/use-kubectl-and-kubeconfig.md#authenticating-directly-with-a-downstream-cluster) to access your cluster with kubectl directly, without authenticating through Rancher. We recommend setting up this alternative method to access your cluster so that in case you can’t connect to Rancher, you can still access the cluster.

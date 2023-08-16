@@ -1,16 +1,11 @@
 ---
 title: 4. Install Rancher
-weight: 400
-aliases:
-  - /rancher/v2.0-v2.4/en/installation/air-gap-high-availability/config-rancher-system-charts/
-  - /rancher/v2.0-v2.4/en/installation/air-gap-high-availability/config-rancher-for-private-reg/
-  - /rancher/v2.0-v2.4/en/installation/air-gap-single-node/install-rancher
-  - /rancher/v2.0-v2.4/en/installation/air-gap/install-rancher
-  - /rancher/v2.0-v2.4/en/installation/air-gap-high-availability/install-rancher/
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+
+<head> 
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/other-installation-methods/air-gapped-helm-cli-install/install-rancher-ha"/>
+</head>
 
 This section is about how to deploy Rancher for your air gapped environment. An air gapped environment could be where Rancher server will be installed offline, behind a firewall, or behind a proxy. There are _tabs_ for either a high availability (recommended) or a Docker installation.
 
@@ -27,13 +22,13 @@ This section describes installing Rancher in five parts:
 - [4. Install Rancher](#4-install-rancher)
 - [5. For Rancher versions before v2.3.0, Configure System Charts](#5-for-rancher-versions-before-v2-3-0-configure-system-charts)
 
-# 1. Add the Helm Chart Repository
+## 1. Add the Helm Chart Repository
 
 From a system that has access to the internet, fetch the latest Helm chart and copy the resulting manifests to a system that has access to the Rancher server cluster.
 
 1. If you haven't already, install `helm` locally on a workstation that has internet access. Note: Refer to the [Helm version requirements](../../resources/helm-version-requirements.md) to choose a version of Helm to install Rancher.
 
-2. Use `helm repo add` command to add the Helm chart repository that contains charts to install Rancher. For more information about the repository choices and which is best for your use case, see [Choosing a Version of Rancher](../../../../reference-guides/installation-references/helm-chart-options.md#helm-chart-repositories).
+2. Use `helm repo add` command to add the Helm chart repository that contains charts to install Rancher. For more information about the repository choices and which is best for your use case, see [Choosing a Rancher Version](../../resources/choose-a-rancher-version.md).
     - Latest: Recommended for trying out the newest features
         ```
         helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
@@ -58,7 +53,7 @@ From a system that has access to the internet, fetch the latest Helm chart and c
     helm fetch rancher-stable/rancher --version=v2.4.8
     ```
 
-# 2. Choose your SSL Configuration
+## 2. Choose your SSL Configuration
 
 Rancher Server is designed to be secure by default and requires SSL/TLS configuration.
 
@@ -71,7 +66,7 @@ When Rancher is installed on an air gapped Kubernetes cluster, there are two rec
 | Rancher Generated Self-Signed Certificates | `ingress.tls.source=rancher` | Use certificates issued by Rancher's generated CA (self signed)<br/> This is the **default** and does not need to be added when rendering the Helm template. | yes                   |
 | Certificates from Files                    | `ingress.tls.source=secret`  | Use your own certificate files by creating Kubernetes Secret(s). <br/> This option must be passed when rendering the Rancher Helm template.                  | no                    |
 
-# 3. Render the Rancher Helm Template
+## 3. Render the Rancher Helm Template
 
 When setting up the Rancher Helm template, there are several options in the Helm chart that are designed specifically for air gap installations.
 
@@ -116,7 +111,7 @@ By default, Rancher generates a CA and uses cert-manager to issue the certificat
 
 1. Download the required CRD file for cert-manager
    ```plain
-   curl -L -o cert-manager/cert-manager-crd.yaml https://github.com/jetstack/cert-manager/releases/download/v1.0.4/cert-manager.crds.yaml
+   curl -L -o cert-manager-crd.yaml https://github.com/jetstack/cert-manager/releases/download/v1.0.4/cert-manager.crds.yaml
    ```
 
 1. Render the Rancher template, declaring your chosen options. Use the reference table below to replace each placeholder. Rancher needs to be configured to use the private registry in order to provision any Rancher launched Kubernetes clusters or Rancher tools.
@@ -187,7 +182,7 @@ Then refer to [Adding TLS Secrets](../../resources/add-tls-secrets.md) to publis
 
 </details>
 
-# 4. Install Rancher
+## 4. Install Rancher
 
 Copy the rendered manifest directories to a system that has access to the Rancher server cluster to complete installation.
 
@@ -232,11 +227,11 @@ kubectl -n cattle-system apply -R -f ./rancher
 
 > **Note:** If you don't intend to send telemetry data, opt out [telemetry](../../../../faq/telemetry.md) during the initial login. Leaving this active in an air-gapped environment can cause issues if the sockets cannot be opened successfully.
 
-# 5. For Rancher versions before v2.3.0, Configure System Charts
+## 5. For Rancher versions before v2.3.0, Configure System Charts
 
 If you are installing Rancher versions before v2.3.0, you will not be able to use the packaged system charts. Since the Rancher system charts are hosted in Github, an air gapped installation will not be able to access these charts. Therefore, you must [configure the Rancher system charts](../../resources/local-system-charts.md).
 
-# Additional Resources
+## Additional Resources
 
 These resources could be helpful when installing Rancher:
 

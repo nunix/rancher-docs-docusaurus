@@ -1,9 +1,10 @@
 ---
-title: Managing GKE Clusters
-shortTitle: Google Kubernetes Engine
-weight: 2105
+title: Creating a GKE Cluster
 ---
 
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-clusters-in-rancher-setup/set-up-clusters-from-hosted-kubernetes-providers/gke"/>
+</head>
 
 ## Prerequisites
 
@@ -17,7 +18,7 @@ The service account requires the following roles:
 
 - **Compute Viewer:** `roles/compute.viewer`
 - **Project Viewer:** `roles/viewer`
-- **Kubernetes Engine Admin:** `roles/container.admin` 
+- **Kubernetes Engine Admin:** `roles/container.admin`
 - **Service Account User:** `roles/iam.serviceAccountUser`
 
 [Google Documentation: Creating and Enabling Service Accounts](https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances)
@@ -52,7 +53,8 @@ Deploying to GKE will incur charges.
 **Result:** You have created credentials that Rancher will use to provision the new GKE cluster.
 
 ### 2. Create the GKE Cluster
-Use Rancher to set up and configure your Kubernetes cluster.
+Use Rancher to set up and configure your Kubernetes cluster. To successfully create a GKE cluster with Rancher, your GKE must be in Standard mode. GKE has two modes of operation when creating a Kubernetes cluster, Autopilot and Standard mode. The cluster configuration for Autopilot mode has restrictions on editing the kube-system namespace. However, Rancher needs to create resources in the kube-system namespace during installation. As a result, you will not be able to create a GKE cluster in Autopilot mode. For more information about the difference between GKE Autopilot mode and Standard mode, visit [Compare GKE Autopilot and Standard.](https://cloud.google.com/kubernetes-engine/docs/resources/autopilot-standard-feature-comparison)
+
 
 1. Click **☰ > Cluster Management**.
 1. On the **Clusters** page, click **Create**.
@@ -70,7 +72,7 @@ Your cluster is created and assigned a state of **Provisioning**. Rancher is sta
 
 You can access your cluster after its state is updated to **Active**.
 
-**Active** clusters are assigned two Projects: 
+**Active** clusters are assigned two Projects:
 
 - `Default`, containing the `default` namespace
 - `System`, containing the `cattle-system`, `ingress-nginx`, `kube-public`, and `kube-system` namespaces
@@ -84,7 +86,7 @@ Private GKE clusters are supported. Note: This advanced setup can require more s
 For details on configuring GKE clusters in Rancher, see [this page.](../../../../pages-for-subheaders/gke-cluster-configuration.md)
 ## Updating Kubernetes Version
 
-The Kubernetes version of a cluster can be upgraded to any version available in the region or zone fo the GKE cluster. Upgrading the master Kubernetes version does not automatically upgrade worker nodes. Nodes can be upgraded independently.
+The Kubernetes version of a cluster can be upgraded to any version available in the region or zone for the GKE cluster. Upgrading the master Kubernetes version does not automatically upgrade worker nodes. Nodes can be upgraded independently.
 
 :::note
 

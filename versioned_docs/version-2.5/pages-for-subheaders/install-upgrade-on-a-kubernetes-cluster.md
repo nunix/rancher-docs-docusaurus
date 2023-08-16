@@ -1,22 +1,11 @@
 ---
 title: Install/Upgrade Rancher on a Kubernetes Cluster
 description: Learn how to install Rancher in development and production environments. Read about single node and high availability installation
-weight: 2
-aliases:
-  - /rancher/v2.5/en/installation/k8s-install/
-  - /rancher/v2.5/en/installation/k8s-install/helm-rancher
-  - /rancher/v2.5/en/installation/k8s-install/kubernetes-rke
-  - /rancher/v2.5/en/installation/ha-server-install
-  - /rancher/v2.5/en/installation/install-rancher-on-k8s/install
-  - /rancher/v2.x/en/installation/install-rancher-on-k8s/
 ---
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 In this section, you'll learn how to deploy Rancher on a Kubernetes cluster using the Helm CLI.
 
-# Prerequisites
+## Prerequisites
 
 - [Kubernetes Cluster](#kubernetes-cluster)
 - [CLI Tools](#cli-tools)
@@ -50,7 +39,7 @@ To deploy Rancher v2.5 on a hosted Kubernetes cluster such as EKS, GKE, or AKS, 
 
 For an example of how to deploy an ingress on EKS, refer to [this section.](../getting-started/installation-and-upgrade/install-upgrade-on-a-kubernetes-cluster/rancher-on-amazon-eks.md#5-install-an-ingress)
 
-# Install the Rancher Helm Chart
+## Install the Rancher Helm Chart
 
 Rancher is installed using the Helm package manager for Kubernetes. Helm charts provide templating syntax for Kubernetes YAML manifest documents.
 
@@ -76,7 +65,7 @@ To set up Rancher,
 
 ### 1. Add the Helm Chart Repository
 
-Use `helm repo add` command to add the Helm chart repository that contains charts to install Rancher. For more information about the repository choices and which is best for your use case, see [Choosing a Version of Rancher](../reference-guides/installation-references/helm-chart-options.md#helm-chart-repositories).
+Use `helm repo add` command to add the Helm chart repository that contains charts to install Rancher. For more information about the repository choices and which is best for your use case, see [Choosing a Rancher Version](../getting-started/installation-and-upgrade/resources/choose-a-rancher-version.md).
 
 - Latest: Recommended for trying out the newest features
     ```

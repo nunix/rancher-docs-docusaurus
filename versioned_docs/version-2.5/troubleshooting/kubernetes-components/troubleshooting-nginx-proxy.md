@@ -1,13 +1,10 @@
 ---
 title: Troubleshooting nginx-proxy
-weight: 3
-aliases:
-  - /rancher/v2.x/en/troubleshooting/kubernetes-components/nginx-proxy/
 ---
 
 The `nginx-proxy` container is deployed on every node that does not have the `controlplane` role. It provides access to all the nodes with the `controlplane` role by dynamically generating the NGINX configuration based on available nodes with the `controlplane` role.
 
-# Check if the Container is Running
+## Check if the Container is Running
 
 The container is called `nginx-proxy` and should have status `Up`. The duration shown after `Up` is the time the container has been running.
 
@@ -23,7 +20,7 @@ CONTAINER ID        IMAGE                       COMMAND                  CREATED
 c3e933687c0e        rancher/rke-tools:v0.1.15   "nginx-proxy CP_HO..."   3 hours ago         Up 3 hours                              nginx-proxy
 ```
 
-# Check Generated NGINX Configuration
+## Check Generated NGINX Configuration
 
 The generated configuration should include the IP addresses of the nodes with the `controlplane` role. The configuration can be checked using the following command:
 
@@ -44,11 +41,11 @@ events {
 
 stream {
         upstream kube_apiserver {
-            
+
             server ip_of_controlplane_node1:6443;
-            
+
             server ip_of_controlplane_node2:6443;
-            
+
         }
 
         server {
@@ -62,7 +59,7 @@ stream {
 }
 ```
 
-# nginx-proxy Container Logging
+## nginx-proxy Container Logging
 
 The logging of the containers can contain information on what the problem could be.
 

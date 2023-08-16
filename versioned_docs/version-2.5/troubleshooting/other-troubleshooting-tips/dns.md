@@ -1,8 +1,5 @@
 ---
 title: DNS
-weight: 103
-aliases:
-  - /rancher/v2.x/en/troubleshooting/dns/
 ---
 
 The commands/steps listed on this page can be used to check name resolution issues in your cluster.
@@ -198,7 +195,7 @@ services:
 
 > **Note:** As the `kubelet` is running inside a container, the path for files located in `/etc` and `/usr` are in `/host/etc` and `/host/usr` inside the `kubelet` container.
 
-See [Editing Cluster as YAML](../../pages-for-subheaders/cluster-configuration.md#editing-clusters-with-yaml) how to apply this change. When the provisioning of the cluster has finished, you have to remove the kube-dns pod to activate the new setting in the pod:
+See [Editing Cluster as YAML](../../reference-guides/cluster-configuration/rancher-server-configuration/rke1-cluster-configuration.md#editing-clusters-with-yaml) how to apply this change. When the provisioning of the cluster has finished, you have to remove the kube-dns pod to activate the new setting in the pod:
 
 ```
 kubectl delete pods -n kube-system -l k8s-app=kube-dns

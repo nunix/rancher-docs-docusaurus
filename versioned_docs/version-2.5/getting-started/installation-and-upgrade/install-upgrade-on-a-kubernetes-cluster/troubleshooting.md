@@ -1,13 +1,10 @@
 ---
 title: Troubleshooting the Rancher Server Kubernetes Cluster
-weight: 276
-aliases:
-  - /rancher/v2.5/en/installation/k8s-install/helm-rancher/troubleshooting
-  - /rancher/v2.5/en/installation/ha/kubernetes-rke/troubleshooting
-  - /rancher/v2.5/en/installation/k8s-install/kubernetes-rke/troubleshooting
-  - /rancher/v2.5/en/installation/options/troubleshooting
-  - /rancher/v2.x/en/installation/resources/troubleshooting/
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/install-upgrade-on-a-kubernetes-cluster/troubleshooting"/>
+</head>
 
 This section describes how to troubleshoot an installation of Rancher on a Kubernetes cluster.
 
@@ -149,7 +146,7 @@ Once the network issue is resolved, the `canal` pods should timeout and restart 
 
 ### nginx-ingress-controller Pods show RESTARTS
 
-The most common cause of this issue is the `canal` pods have failed to establish the overlay network. See [canal Pods show READY `2/3`](#canal-pods-show-ready-2-3) for troubleshooting.
+The most common cause of this issue is the `canal` pods have failed to establish the overlay network. See [canal Pods show READY `2/3`](#canal-pods-show-ready-23) for troubleshooting.
 
 
 ### Failed to dial to /var/run/docker.sock: ssh: rejected: administratively prohibited (open failed)

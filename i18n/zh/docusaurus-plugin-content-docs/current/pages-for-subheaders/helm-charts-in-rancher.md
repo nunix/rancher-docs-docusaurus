@@ -1,21 +1,14 @@
 ---
 title: Rancher 中的 Helm Chart
-weight: 11
 ---
 
-在本节中，你将学习如何在 Rancher 中管理 Helm Chart 仓库和应用。你可以在**应用 & 应用市场**中管理 Helm Chart 仓库。它使用类似目录的系统从仓库中导入 Chart 包，然后使用这些 Chart 来部署自定义 Helm 应用或 Rancher 工具（例如监控和 Istio）。Rancher 工具以预加载仓库的方式提供，并能部署为独立的 Helm Chart 。其他仓库只会添加到当前集群。
+在本节中，你将学习如何在 Rancher 中管理 Helm Chart 仓库和应用。你可以在 **Apps** 中管理 Helm Chart 仓库。它使用类似目录的系统从仓库中导入 Chart 包，然后使用这些 Chart 来部署自定义 Helm 应用或 Rancher 工具（例如监控和 Istio）。Rancher 工具以预加载仓库的方式提供，并能部署为独立的 Helm Chart 。其他仓库只会添加到当前集群。
 
-### Rancher 2.6 变更
+### 版本控制方案
 
-Rancher 2.6.0 实现了功能 Chart 的新版本控制方案。变更主要是 Chart 的主要版本和上游 Chart 的 +up 注释（如果适用）。
+Rancher 功能 Chart 版本控制方案以 Chart 的主要版本和上游 Chart 的 `+up` 注释（如果适用）为中心。
 
-**主要版本**：Chart 的主要版本与 Rancher 次要版本相关联。当你升级到新的 Rancher 次要版本时，你应该确保你的所有**应用 & 应用市场** Chart 也升级到 Chart 的正确发行版本。
-
-:::note
-
-如果你的主要版本低于下表中提到的版本，则请使用 2.5 及以下版本。例如，建议你不要在 2.6.x+ 中使用 <100.x.x 版本的 Monitoring。
-
-:::
+**主要版本**：Chart 的主要版本与 Rancher 次要版本相关联。当你升级到新的 Rancher 次要版本时，你应该确保你的所有 **Apps** Chart 也升级到 Chart 的正确发行版本。
 
 **功能 Chart**：
 
@@ -46,10 +39,19 @@ Rancher 2.6.0 实现了功能 Chart 的新版本控制方案。变更主要是 C
 
 - 在升级时，请确保你没有降级你正在使用的 Chart 版本。例如，如果你在 Rancher 2.5 中使用 Monitoring > `16.6.0` 版本，则不应升级到 `100.x.x+up16.6.0`。相反，你应该在下一个发行版中升级到适当的版本。
 
+### 预发布版本
+
+预发布版本遵循 [Semantic Versioning 2.0.0](https://semver.org/) 定义的[规范](https://semver.org/#spec-item-9)。例如，版本为 `0.1.3-dev.12ab4f` 的 Helm chart 为预发布版本。默认情况下不显示预发布版本，必须进行配置才能显示。
+
+要显示预发布版本：
+
+1. 单击右上角的用户头像。
+1. 单击**偏好设置**。
+1. 在 **Helm Chart** 下，选择**包括预发布版本**。
 
 ### Charts
 
-从左上角的菜单中选择 _应用 & 应用市场_，然后你会转到 Chart 页面。
+从左上角的菜单中选择 _Apps_，然后你会转到 Chart 页面。
 
 Chart 页面包含所有 Rancher、Partner 和自定义 Chart 。
 
@@ -61,7 +63,7 @@ Chart 页面包含所有 Rancher、Partner 和自定义 Chart 。
 
 :::note
 
-由 Cluster Manager （旧版 Rancher UI 中的全局视图）管理的应用应继续仅由 Cluster Manager 管理，而在新 UI 中使用<b>应用 & 应用市场</b>管理的应用则仅能由<b>应用 & 应用市场</b>管理。
+由 Cluster Manager （旧版 Rancher UI 中的全局视图）管理的应用应继续仅由 Cluster Manager 管理，而在新 UI 中使用 <b>Apps</b> 管理的应用则仅能由 <b>Apps</b> 管理。
 
 :::
 
@@ -96,12 +98,11 @@ Chart 页面包含所有 Rancher、Partner 和自定义 Chart 。
    [...]
    ```
 
-
 :::note
 
 带有身份验证的 Helm Chart 仓库
 
-从 Rancher 2.6.3 开始，Repo.Spec 中添加了一个新值 `disableSameOriginCheck`。它允许用户绕过相同源的检查，将仓库身份验证信息作为基本 Auth 标头与所有 API 调用一起发送。不建议采用这种做法，但这可以用作非标准 Helm Chart 仓库（例如重定向到不同源 URL 的仓库）的临时解决方案。
+Repo.Spec 包含一个 `disableSameOriginCheck` 值，该值允许用户绕过相同源的检查，将仓库身份认证信息作为基本 Auth 标头与所有 API 调用一起发送。不建议采用这种做法，但这可以用作非标准 Helm Chart 仓库（例如重定向到不同源 URL 的仓库）的临时解决方案。
 
 要将此功能用于现有 Helm Chart 仓库，请单击 <b>⋮ > 编辑 YAML</b>。在 YAML 文件的 `spec` 部分，添加 `disableSameOriginCheck` 并将其设置为 `true`：
 
@@ -127,7 +128,7 @@ spec:
 
 安装 Chart 后，你可以在 _已安装的应用_ 选项卡中找到该 Chart。在本节中，你可以升级或删除安装，并查看更多详细信息。选择升级时，呈现的形式和数值与安装相同。
 
-大多数 Rancher 工具在 _应用 & 应用市场_ 下方的工具栏中都有额外的页面，以帮助你管理和使用这些功能。这些页面包括指向仪表板的链接、可轻松添加自定义资源的表单以及其他信息。
+大多数 Rancher 工具在 _Apps_ 下方的工具栏中都有额外的页面，以帮助你管理和使用这些功能。这些页面包括指向仪表板的链接、可轻松添加自定义资源的表单以及其他信息。
 
 :::caution
 
@@ -139,9 +140,9 @@ spec:
 
 :::
 
-#### Rancher 2.6.3 变更
+#### 旧版应用
 
-**应用 & 应用市场 > 已安装的应用**页面中，旧版应用的升级按钮已被移除。
+**Apps > Installed Apps** 页面中，旧版应用的升级按钮已被移除。
 
 如果你安装了旧版应用并想要升级它：
 

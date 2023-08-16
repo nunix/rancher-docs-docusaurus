@@ -1,12 +1,6 @@
 ---
 title: User Preferences
-weight: 7012
-aliases:
-  - /rancher/v2.x/en/user-settings/preferences/
 ---
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 Each user can choose preferences to personalize their Rancher experience. To change preference settings, open the **User Settings** menu and then select **Preferences**.
 

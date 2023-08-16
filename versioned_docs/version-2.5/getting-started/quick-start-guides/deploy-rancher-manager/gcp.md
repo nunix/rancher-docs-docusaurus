@@ -1,8 +1,12 @@
 ---
 title: Rancher GCP Quick Start Guide
 description: Read this step by step Rancher GCP guide to quickly deploy a Rancher server with a single-node downstream Kubernetes cluster attached.
-weight: 100
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/quick-start-guides/deploy-rancher-manager/gcp"/>
+</head>
+
 The following steps will quickly deploy a Rancher server on GCP in a single-node K3s Kubernetes cluster, with a single-node downstream Kubernetes cluster attached.
 
 >**Note:** The intent of these guides is to quickly launch a sandbox that you can use to evaluate Rancher. These guides are not intended for production environments. For comprehensive setup instructions, see [Installation](../../../pages-for-subheaders/installation-and-upgrade.md).
@@ -22,7 +26,7 @@ The following steps will quickly deploy a Rancher server on GCP in a single-node
 
 1. Clone [Rancher Quickstart](https://github.com/rancher/quickstart) to a folder using `git clone https://github.com/rancher/quickstart`.
 
-2. Go into the GCP folder containing the terraform files by executing `cd quickstart/gcp`.
+2. Go into the GCP folder containing the Terraform files by executing `cd quickstart/rancher/gcp`.
 
 3. Rename the `terraform.tfvars.example` file to `terraform.tfvars`.
 
@@ -31,7 +35,7 @@ The following steps will quickly deploy a Rancher server on GCP in a single-node
     - `rancher_server_admin_password` - Admin password for created Rancher server
 
 5. **Optional:** Modify optional variables within `terraform.tfvars`.
-See the [Quickstart Readme](https://github.com/rancher/quickstart) and the [GCP Quickstart Readme](https://github.com/rancher/quickstart/tree/master/gcp) for more information.
+See the [Quickstart Readme](https://github.com/rancher/quickstart) and the [GCP Quickstart Readme](https://github.com/rancher/quickstart/tree/master/rancher/gcp) for more information.
 Suggestions include:
     - `gcp_region` - Google GCP region, choose the closest instead of the default (`us-east4`)
     - `gcp_zone` - Google GCP zone, choose the closest instead of the default (`us-east4-a`)
@@ -53,7 +57,7 @@ Suggestions include:
     ```
 
 8. Paste the `rancher_server_url` from the output above into the browser. Log in when prompted (default username is `admin`, use the password set in `rancher_server_admin_password`).
-9. ssh to the Rancher Server using the `id_rsa` key generated in `quickstart/gcp`.
+9. ssh to the Rancher Server using the `id_rsa` key generated in `quickstart/rancher/gcp`.
 
 #### Result
 
@@ -65,6 +69,6 @@ Use Rancher to create a deployment. For more information, see [Creating Deployme
 
 ## Destroying the Environment
 
-1. From the `quickstart/gcp` folder, execute `terraform destroy --auto-approve`.
+1. From the `quickstart/rancher/gcp` folder, execute `terraform destroy --auto-approve`.
 
 2. Wait for confirmation that all resources have been destroyed.

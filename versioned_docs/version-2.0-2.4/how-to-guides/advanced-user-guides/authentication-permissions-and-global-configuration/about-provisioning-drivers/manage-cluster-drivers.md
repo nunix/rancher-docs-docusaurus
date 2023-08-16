@@ -1,7 +1,10 @@
 ---
 title: Cluster Drivers
-weight: 1
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/authentication-permissions-and-global-configuration/about-provisioning-drivers/manage-cluster-drivers"/>
+</head>
 
 _Available as of v2.2.0_
 

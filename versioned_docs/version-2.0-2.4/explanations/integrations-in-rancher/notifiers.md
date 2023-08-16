@@ -1,13 +1,5 @@
 ---
 title: Notifiers
-weight: 4
-aliases:
-  - /rancher/v2.0-v2.4/en/project-admin/tools/notifiers
-  - /rancher/v2.0-v2.4/en/cluster-admin/tools/notifiers
-  - /rancher/v2.0-v2.4/en/monitoring-alerting/legacy/notifiers
-  - /rancher/v2.0-v2.4/en/monitoring-alerting/v2.0.x-v2.4.x/notifiers
-  - /rancher/v2.x/en/monitoring-alerting/v2.0.x-v2.4.x/notifiers/
-  - /rancher/v2.x/en/monitoring-alerting/v2.0.x-v2.4.x/cluster-alerts/default-alerts/
 ---
 
 Notifiers are services that inform you of alert events. You can configure notifiers to send alert notifications to staff best suited to take corrective action.
@@ -23,11 +15,11 @@ Rancher integrates with a variety of popular IT services, including:
 - **Microsoft Teams**: (Available as of v2.4.6) Send alert notifications to Teams using a webhook.
 
 
-# Roles-based Access Control for Notifiers
+## Roles-based Access Control for Notifiers
 
 Notifiers are configured at the cluster level. This model ensures that only cluster owners need to configure notifiers, leaving project owners to simply configure alerts in the scope of their projects. You don't need to dispense privileges like SMTP server access or cloud account access.
 
-# Adding Notifiers
+## Adding Notifiers
 
 Set up a notifier so that you can begin configuring and sending alerts.
 
@@ -39,7 +31,7 @@ Set up a notifier so that you can begin configuring and sending alerts.
 
 **Result:** Your notifier is added to Rancher.
 
-# Configuration
+## Configuration
 
 - [Slack](#slack)
 - [Email](#email)
@@ -148,7 +140,7 @@ _Available as of v2.4.6_
 
 **Validation:** Click **Test.** If the test is successful, the Teams notifier output is **MicrosoftTeams setting validated.**
 
-# Managing Notifiers
+## Managing Notifiers
 
 After you set up notifiers, you can manage them. From the **Global** view, open the cluster that you want to manage your notifiers. Select **Tools > Notifiers**. You can:
 
@@ -156,7 +148,7 @@ After you set up notifiers, you can manage them. From the **Global** view, open 
 - **Clone** them, to quickly setup slightly different notifiers.
 - **Delete** them when they're no longer necessary.
 
-# Example Payload for a Webhook Alert Notifier
+## Example Payload for a Webhook Alert Notifier
 
 ```json
 {
@@ -192,7 +184,8 @@ After you set up notifiers, you can manage them. From the **Global** view, open 
   }
 }
 ```
-# What's Next?
+
+## What's Next?
 
 After creating a notifier, set up alerts to receive notifications of Rancher system events.
 

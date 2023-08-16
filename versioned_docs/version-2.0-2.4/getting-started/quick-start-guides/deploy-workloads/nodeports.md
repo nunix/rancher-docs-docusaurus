@@ -1,7 +1,10 @@
 ---
 title: Workload with NodePort Quick Start
-weight: 200
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/quick-start-guides/deploy-workloads/nodeports"/>
+</head>
 
 ### Prerequisite
 

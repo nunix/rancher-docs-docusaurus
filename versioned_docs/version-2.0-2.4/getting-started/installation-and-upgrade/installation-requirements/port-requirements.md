@@ -1,8 +1,11 @@
 ---
 title: Port Requirements
 description: Read about port requirements needed in order for Rancher to operate properly, both for Rancher nodes and downstream Kubernetes cluster nodes
-weight: 300
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/installation-requirements/port-requirements"/>
+</head>
 
 import PortsIaasNodes from '@site/src/components/PortsIaasNodes'
 import PortsCustomNodes from '@site/src/components/PortsCustomNodes'
@@ -10,7 +13,7 @@ import PortsImportedHosted from '@site/src/components/PortsImportedHosted'
 
 To operate properly, Rancher requires a number of ports to be open on Rancher nodes and on downstream Kubernetes cluster nodes.
 
-# Rancher Nodes
+## Rancher Nodes
 
 The following table lists the ports that need to be open to and from nodes that are running the Rancher server.
 
@@ -128,7 +131,7 @@ The following tables break down the port requirements for Rancher nodes, for inb
 
 </details>
 
-# Downstream Kubernetes Cluster Nodes
+## Downstream Kubernetes Cluster Nodes
 
 Downstream Kubernetes clusters run your apps and services. This section describes what ports need to be opened on the nodes in downstream clusters so that Rancher can communicate with them.
 
@@ -192,8 +195,7 @@ The following table depicts the port requirements for [imported clusters](../../
 
 </details>
 
-
-# Other Port Considerations
+## Other Port Considerations
 
 ### Commonly Used Ports
 

@@ -1,13 +1,10 @@
 ---
 title: '3. Install Kubernetes (Skip for Docker Installs)'
-weight: 300
-aliases:
-  - /rancher/v2.5/en/installation/air-gap-high-availability/install-kube
-  - /rancher/v2.x/en/installation/other-installation-methods/air-gap/launch-kubernetes/
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/other-installation-methods/air-gapped-helm-cli-install/install-kubernetes"/>
+</head>
 
 > Skip this section if you are installing Rancher on a single node with Docker.
 

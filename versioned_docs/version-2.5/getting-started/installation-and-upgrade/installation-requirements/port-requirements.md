@@ -1,20 +1,19 @@
 ---
 title: Port Requirements
 description: Read about port requirements needed in order for Rancher to operate properly, both for Rancher nodes and downstream Kubernetes cluster nodes
-weight: 300
-aliases:
-  - /rancher/v2.x/en/installation/requirements/ports/
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/installation-requirements/port-requirements"/>
+</head>
+
 import PortsIaasNodes from '@site/src/components/PortsIaasNodes'
 import PortsCustomNodes from '@site/src/components/PortsCustomNodes'
 import PortsImportedHosted from '@site/src/components/PortsImportedHosted'
 
 To operate properly, Rancher requires a number of ports to be open on Rancher nodes and on downstream Kubernetes cluster nodes.
 
-# Rancher Nodes
+## Rancher Nodes
 
 The following table lists the ports that need to be open to and from nodes that are running the Rancher server.
 
@@ -166,7 +165,7 @@ The following tables break down the port requirements for Rancher nodes, for inb
 
 </details>
 
-# Downstream Kubernetes Cluster Nodes
+## Downstream Kubernetes Cluster Nodes
 
 Downstream Kubernetes clusters run your apps and services. This section describes what ports need to be opened on the nodes in downstream clusters so that Rancher can communicate with them.
 
@@ -232,7 +231,7 @@ The following table depicts the port requirements for [registered clusters](../.
 </details>
 
 
-# Other Port Considerations
+## Other Port Considerations
 
 ### Commonly Used Ports
 
@@ -285,18 +284,18 @@ SUSE Linux may have a firewall that blocks all ports by default. To open the por
 
 1. SSH into the instance.
 1. Start YaST in text mode:
-```
-sudo yast2
-```
+    ```
+    sudo yast2
+    ```
 
-1. Navigate to **Security and Users** > **Firewall** > **Zones:public** > **Ports**. To navigate within the interface, follow the instructions [here](https://doc.opensuse.org/documentation/leap/reference/html/book.opensuse.reference/cha-yast-text.html#sec-yast-cli-navigate).
+1. Navigate to **Security and Users** > **Firewall** > **Zones:public** > **Ports**. To navigate within the interface, follow these [instructions](https://doc.opensuse.org/documentation/leap/reference/html/book-reference/cha-yast-text.html#sec-yast-cli-navigate).
 1. To open the required ports, enter them into the **TCP Ports** and **UDP Ports** fields. In this example, ports 9796 and 10250 are also opened for monitoring. The resulting fields should look similar to the following:
-```yaml
-TCP Ports
-22, 80, 443, 2376, 2379, 2380, 6443, 9099, 9796, 10250, 10254, 30000-32767
-UDP Ports
-8472, 30000-32767
-```
+    ```yaml
+    TCP Ports
+    22, 80, 443, 2376, 2379, 2380, 6443, 9099, 9796, 10250, 10254, 30000-32767
+    UDP Ports
+    8472, 30000-32767
+    ```
 
 1. When all required ports are enter, select **Accept**.
 
@@ -306,15 +305,15 @@ UDP Ports
 
 1. SSH into the instance.
 1. Edit /`etc/sysconfig/SuSEfirewall2` and open the required ports. In this example, ports 9796 and 10250 are also opened for monitoring:
-  ```
-  FW_SERVICES_EXT_TCP="22 80 443 2376 2379 2380 6443 9099 9796 10250 10254 30000:32767"
-  FW_SERVICES_EXT_UDP="8472 30000:32767"
-  FW_ROUTE=yes
-  ```
+    ```
+    FW_SERVICES_EXT_TCP="22 80 443 2376 2379 2380 6443 9099 9796 10250 10254 30000:32767"
+    FW_SERVICES_EXT_UDP="8472 30000:32767"
+    FW_ROUTE=yes
+    ```
 1. Restart the firewall with the new ports:
-  ```
-  SuSEfirewall2
-  ```
+    ```
+    SuSEfirewall2
+    ```
 
 </TabItem>
 </Tabs>

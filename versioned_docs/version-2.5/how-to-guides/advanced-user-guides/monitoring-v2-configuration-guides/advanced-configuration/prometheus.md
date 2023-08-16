@@ -1,16 +1,11 @@
 ---
 title: Prometheus Configuration
-weight: 1
-aliases:
-  - /rancher/v2.5/en/monitoring-alerting/configuration/prometheusrules
-  - /rancher/v2.5/en/monitoring-alerting/configuration/prometheusrules
-  - /rancher/v2.5/en/monitoring-alerting/configuration/advanced/prometheusrules
 ---
 
 It is usually not necessary to directly edit the Prometheus custom resource because the monitoring application automatically updates it based on changes to ServiceMonitors and PodMonitors.
 > This section assumes familiarity with how monitoring components work together. For more information, see [this section.](../../../../explanations/integrations-in-rancher/monitoring-and-alerting/how-monitoring-works.md)
 
-# About the Prometheus Custom Resource
+## About the Prometheus Custom Resource
 
 The Prometheus CR defines a desired Prometheus deployment. The Prometheus Operator observes the Prometheus CR. When the CR changes, the Prometheus Operator creates `prometheus-rancher-monitoring-prometheus`, a Prometheus deployment based on the CR configuration.
 

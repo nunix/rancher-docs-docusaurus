@@ -1,12 +1,10 @@
 ---
 title: Upgrading Cert-Manager
-weight: 4
-aliases:
-  - /rancher/v2.5/en/installation/options/upgrading-cert-manager
-  - /rancher/v2.5/en/installation/options/upgrading-cert-manager/helm-2-instructions
-  - /rancher/v2.5/en/installation/resources/encryption/upgrading-cert-manager
-  - /rancher/v2.x/en/installation/resources/upgrading-cert-manager/
 ---
+
+<head>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/resources/upgrade-cert-manager"/>
+</head>
 
 Rancher uses cert-manager to automatically generate and renew TLS certificates for HA deployments of Rancher. As of Fall 2019, three important changes to cert-manager are set to occur that you need to take action on if you have an HA deployment of Rancher:
 
@@ -30,7 +28,7 @@ To address these changes, this guide will do two things:
 
 > For reinstalling Rancher with Helm, please check [Option B: Reinstalling Rancher Chart](../install-upgrade-on-a-kubernetes-cluster/upgrades.md) under the upgrade Rancher section.
 
-# Upgrade Cert-Manager
+## Upgrade Cert-Manager
 
 The namespace used in these instructions depends on the namespace cert-manager is currently installed in. If it is in kube-system use that in the instructions below. You can verify by running `kubectl get pods --all-namespaces` and checking which namespace the cert-manager-\* pods are listed in. Do not change the namespace cert-manager is running in or this can cause issues.
 
@@ -158,7 +156,7 @@ Before you can perform the upgrade, you must prepare your air gapped environment
 1. Download the required CRD file for cert-manager (old and new)
 
     ```plain
-    curl -L -o cert-manager/cert-manager-crd.yaml https://raw.githubusercontent.com/jetstack/cert-manager/release-0.12/deploy/manifests/00-crds.yaml
+    curl -L -o cert-manager-crd.yaml https://raw.githubusercontent.com/jetstack/cert-manager/release-0.12/deploy/manifests/00-crds.yaml
     curl -L -o cert-manager/cert-manager-crd-old.yaml https://raw.githubusercontent.com/jetstack/cert-manager/release-X.Y/deploy/manifests/00-crds.yaml
     ```
 
@@ -245,4 +243,3 @@ We have also removed support for the old configuration format that was deprecate
 Details about the change and migration instructions can be found in the [cert-manager v0.10 to v0.11 upgrade instructions](https://cert-manager.io/docs/installation/upgrading/upgrading-0.10-0.11/).
 
 More info about [cert-manager upgrade information](https://cert-manager.io/docs/installation/upgrading/).
-
